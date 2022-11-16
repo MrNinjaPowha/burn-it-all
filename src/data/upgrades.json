@@ -1,0 +1,93 @@
+[
+  {
+    "name": "upgrade_natural_gas",
+    "cost": 0,
+    "effects": [
+      {
+        "type": "start"
+      }
+    ],
+    "requirements": []
+  },
+  {
+    "name": "upgrade_ethane",
+    "cost": 5e3,
+    "effects": [
+      {
+        "type": "all",
+        "value": 1.1
+      }
+    ],
+    "requirements": []
+  },
+  {
+    "name": "upgrade_gasoline",
+    "cost": 1e5,
+    "effects": [
+      {
+        "type": "all",
+        "value": 1.2
+      }
+    ],
+    "requirements": ["upgrade_ethane"]
+  },
+  {
+    "name": "upgrade_crude_oil",
+    "cost": 2e6,
+    "effects": [
+      {
+        "type": "all",
+        "value": 1.3
+      }
+    ],
+    "requirements": ["upgrade_gasoline"]
+  },
+  {
+    "name": "upgrade_coal_tar",
+    "cost": 4e7,
+    "effects": [
+      {
+        "type": "all",
+        "value": 1.45
+      }
+    ],
+    "requirements": ["upgrade_crude_oil"]
+  },
+  {
+    "name": "upgrade_bituminous_coal",
+    "cost": 8e8,
+    "effects": [
+      {
+        "type": "all",
+        "value": 1.65
+      }
+    ],
+    "requirements": ["upgrade_coal_tar"]
+  },
+  {
+    "name": "upgrade_coke",
+    "cost": 1.6e10,
+    "effects": [
+      {
+        "type": "all",
+        "value": 1.9
+      }
+    ],
+    "requirements": ["upgrade_bituminous_coal"]
+  },
+  {
+    "name": "upgrade_charcoal",
+    "cost": 3.2e11,
+    "effects": [
+      {
+        "type": "all",
+        "value": 2
+      },
+      {
+        "type": "woodcutting",
+        "value": 2
+      }
+    ],
+    "requirements": ["upgrade_coke"]
+  }
+]
