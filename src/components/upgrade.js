@@ -33,8 +33,15 @@ export default class Upgrade extends React.Component {
         key={effect.type}
         className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
         style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
-        dangerouslySetInnerHTML={{ __html: types[effect.type].desc.replace('#val', effect.value) }}
-      ></p>
+      >
+        Cost: {this.props.data.cost}
+        <br /> <br />
+        <span
+          dangerouslySetInnerHTML={{
+            __html: types[effect.type].desc.replace('#val', effect.value),
+          }}
+        />
+      </p>
     ));
   }
 

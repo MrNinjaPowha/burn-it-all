@@ -1,8 +1,8 @@
 {
   "start": {
-    "desc": "Switch to an unclean energy source to start producing emission"
+    "desc": "Switch to an unclean energy source to start producing emission."
   },
   "all": {
-    "desc": "Increases all CO<sub>2</sub> emissions by #val"
+    "desc": "Increases all CO<sub>2</sub> emissions by #val."
   }
 }
