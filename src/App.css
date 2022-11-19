@@ -8,14 +8,15 @@ img {
   background-image: url(./images/upgrades/background.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  transform: scale(0.9);
   transition: transform 50ms;
 }
 
 .upgrade:hover {
   background-image: url(./images/upgrades/background_hover.svg);
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .upgrade:active {
-  transform: scale(0.9);
+  transform: scale(0.85);
 }
