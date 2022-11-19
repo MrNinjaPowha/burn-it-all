@@ -43,7 +43,8 @@ export default class UpgradeList extends React.Component {
 
     return (
       <ul
-        className="grid grid-cols-5 gap-1 p-1"
+        id="upgrade-list"
+        className="grid grid-cols-5 p-1"
         onMouseEnter={this.onFocusIn}
         onMouseLeave={this.onFocusOut}
         onFocus={this.onFocusIn}

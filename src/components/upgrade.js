@@ -1,19 +1,58 @@
 import React from 'react';
+const types = require('../data/upgradeTypes.json');
 
 export default class Upgrade extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      focused: false,
+    };
+
     this.img = require('../images/placeholder.png');
+    this.desc = props.data.effects.map((effect) => types[effect.type].desc);
+
+    this.onFocusIn = this.onFocusIn.bind(this);
+    this.onFocusOut = this.onFocusOut.bind(this);
+  }
+
+  onFocusIn() {
+    this.setState(() => ({
+      focused: true,
+    }));
+  }
+
+  onFocusOut() {
+    this.setState(() => ({
+      focused: false,
+    }));
+  }
+
+  getDescription() {
+    return this.props.data.effects.map((effect) => (
+      <p
+        key={effect.type}
+        className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
+        style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
+        dangerouslySetInnerHTML={{ __html: types[effect.type].desc.replace('#val', effect.value) }}
+      ></p>
+    ));
   }
 
   render() {
     return (
-      <button
-        className="upgrade aspect-square w-full"
-        onClick={() => this.props.onPurchase(this.props.data)}
-      >
-        <img src={this.img} alt={this.props.data.name} />
-      </button>
+      <div>
+        <button
+          className="upgrade aspect-square w-full"
+          onClick={() => this.props.onPurchase(this.props.data)}
+          onMouseEnter={this.onFocusIn}
+          onMouseLeave={this.onFocusOut}
+          onFocus={this.onFocusIn}
+          onBlur={this.onFocusOut}
+        >
+          <img src={this.img} alt={this.props.data.name} />
+        </button>
+        {this.state.focused ? this.getDescription() : <></>}
+      </div>
     );
   }
 }
