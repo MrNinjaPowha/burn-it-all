@@ -8,7 +8,6 @@ export default class Upgrade extends React.Component {
       focused: false,
     };
 
-    this.img = require('../images/placeholder.png');
     this.desc = props.data.effects.map((effect) => types[effect.type].desc);
 
     this.onFocusIn = this.onFocusIn.bind(this);
@@ -33,7 +32,9 @@ export default class Upgrade extends React.Component {
         className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
         style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
       >
-        <p>Cost: {this.props.data.cost}</p>
+        <p>
+          Cost: {this.props.data.cost} kgCO<sub>2</sub>
+        </p>
         <br />
         {this.props.data.effects.map((effect) => (
           <p
@@ -58,7 +59,10 @@ export default class Upgrade extends React.Component {
           onFocus={this.onFocusIn}
           onBlur={this.onFocusOut}
         >
-          <img src={this.img} alt={this.props.data.name} />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/upgrades/${this.props.data.image}`}
+            alt={this.props.data.name}
+          />
         </button>
         {this.state.focused ? this.getDescription() : <></>}
       </div>

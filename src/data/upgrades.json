@@ -1,6 +1,7 @@
 [
   {
     "name": "upgrade_natural_gas",
+    "image": "natural_gas.svg",
     "cost": 0,
     "effects": [
       {
@@ -11,6 +12,7 @@
   },
   {
     "name": "upgrade_ethane",
+    "image": "ethane.svg",
     "cost": 5e3,
     "effects": [
       {
@@ -22,6 +24,7 @@
   },
   {
     "name": "upgrade_gasoline",
+    "image": "gasoline.svg",
     "cost": 1e5,
     "effects": [
       {
@@ -33,6 +36,7 @@
   },
   {
     "name": "upgrade_crude_oil",
+    "image": "crude_oil.svg",
     "cost": 2e6,
     "effects": [
       {
@@ -44,6 +48,7 @@
   },
   {
     "name": "upgrade_coal_tar",
+    "image": "coal_tar.svg",
     "cost": 4e7,
     "effects": [
       {
@@ -55,6 +60,7 @@
   },
   {
     "name": "upgrade_bituminous_coal",
+    "image": "bituminous_coal.svg",
     "cost": 8e8,
     "effects": [
       {
@@ -66,6 +72,7 @@
   },
   {
     "name": "upgrade_coke",
+    "image": "coke.svg",
     "cost": 1.6e10,
     "effects": [
       {
@@ -77,6 +84,7 @@
   },
   {
     "name": "upgrade_charcoal",
+    "image": "charcoal.svg",
     "cost": 3.2e11,
     "effects": [
       {
