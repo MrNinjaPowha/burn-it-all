@@ -29,11 +29,13 @@ export default class App extends React.Component {
   }
 
   onPurchase(upgrade) {
-    this.productionHandler.newUpgrade(upgrade);
-    this.state.upgrades.push(upgrade.name);
-    this.state.unlocks.push(upgrade.name);
+    if (this.state.totalEmissions >= upgrade.cost) {
+      this.productionHandler.newUpgrade(upgrade);
+      this.state.upgrades.push(upgrade.name);
+      this.state.unlocks.push(upgrade.name);
 
-    this.setState(this.state);
+      this.setState(this.state);
+    }
   }
 
   render() {
