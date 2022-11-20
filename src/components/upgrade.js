@@ -28,21 +28,23 @@ export default class Upgrade extends React.Component {
   }
 
   getDescription() {
-    return this.props.data.effects.map((effect) => (
-      <p
-        key={effect.type}
+    return (
+      <div
         className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
         style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
       >
-        Cost: {this.props.data.cost}
-        <br /> <br />
-        <span
-          dangerouslySetInnerHTML={{
-            __html: types[effect.type].desc.replace('#val', effect.value),
-          }}
-        />
-      </p>
-    ));
+        <p>Cost: {this.props.data.cost}</p>
+        <br />
+        {this.props.data.effects.map((effect) => (
+          <p
+            key={effect.type}
+            dangerouslySetInnerHTML={{
+              __html: types[effect.type].desc.replace('#val', effect.value),
+            }}
+          />
+        ))}
+      </div>
+    );
   }
 
   render() {
