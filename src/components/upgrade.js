@@ -36,14 +36,18 @@ export default class Upgrade extends React.Component {
           Cost: {this.props.data.cost} kgCO<sub>2</sub>
         </p>
         <br />
-        {this.props.data.effects.map((effect) => (
-          <p
-            key={effect.type}
-            dangerouslySetInnerHTML={{
-              __html: types[effect.type].desc.replace('#val', effect.value),
-            }}
-          />
-        ))}
+        {this.props.data.effects.map((effect) =>
+          types.hasOwnProperty(effect.type) ? (
+            <p
+              key={effect.type}
+              dangerouslySetInnerHTML={{
+                __html: types[effect.type].desc.replace('#val', effect.value),
+              }}
+            />
+          ) : (
+            <p key={effect.type}>???</p>
+          )
+        )}
       </div>
     );
   }
