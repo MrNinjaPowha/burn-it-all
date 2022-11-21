@@ -34,7 +34,9 @@ export default class App extends React.Component {
       this.state.upgrades.push(upgrade.name);
       this.state.unlocks.push(upgrade.name);
 
-      this.setState(this.state);
+      this.setState((state) => ({
+        currentEmissions: state.currentEmissions - upgrade.cost,
+      }));
     }
   }
 
