@@ -1,5 +1,6 @@
 import React from 'react';
 const types = require('../data/upgradeTypes.json');
+const lang_en_US = require('../lang/en_US/upgrades.json');
 
 export default class Upgrade extends React.Component {
   constructor(props) {
@@ -7,8 +8,6 @@ export default class Upgrade extends React.Component {
     this.state = {
       focused: false,
     };
-
-    this.desc = props.data.effects.map((effect) => types[effect.type].desc);
 
     this.onFocusIn = this.onFocusIn.bind(this);
     this.onFocusOut = this.onFocusOut.bind(this);
@@ -32,6 +31,7 @@ export default class Upgrade extends React.Component {
         className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
         style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
       >
+        <p className="text-lg">{lang_en_US[this.props.data.name]}</p>
         <p>
           Cost: {this.props.data.cost} kgCO<sub>2</sub>
         </p>

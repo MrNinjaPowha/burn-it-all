@@ -1,0 +1,10 @@
+{
+  "upgrade_natural_gas": "Fuel: Natural gas",
+  "upgrade_ethane": "Fuel: Ethane",
+  "upgrade_gasoline": "Fuel: Gasoline",
+  "upgrade_crude_oil": "Fuel: Crude oil",
+  "upgrade_coal_tar": "Fuel: Coal tar",
+  "upgrade_bituminous_coal": "Fuel: Bituminous coal",
+  "upgrade_coke": "Fuel: Coke",
+  "upgrade_charcoal": "Fuel: Charcoal"
+}
