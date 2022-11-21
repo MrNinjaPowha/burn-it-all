@@ -4,5 +4,8 @@
   },
   "fuel": {
     "desc": "Increases all CO<sub>2</sub> emissions by #valx that of natural gas."
+  },
+  "clicker": {
+    "desc": "Increases CO<sub>2</sub> emissions produced by clicking the button by #valx."
   }
 }

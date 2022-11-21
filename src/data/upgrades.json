@@ -97,5 +97,41 @@
       }
     ],
     "requirements": ["upgrade_coke"]
+  },
+  {
+    "name": "upgrade_clicker_1",
+    "image": "clicker_1.svg",
+    "cost": 100,
+    "effects": [
+      {
+        "type": "clicker",
+        "value": 2
+      }
+    ],
+    "requirements": []
+  },
+  {
+    "name": "upgrade_clicker_2",
+    "image": "clicker_2.svg",
+    "cost": 1e3,
+    "effects": [
+      {
+        "type": "clicker",
+        "value": 2
+      }
+    ],
+    "requirements": []
+  },
+  {
+    "name": "upgrade_clicker_3",
+    "image": "clicker_3.svg",
+    "cost": 5e4,
+    "effects": [
+      {
+        "type": "clicker",
+        "value": 2
+      }
+    ],
+    "requirements": []
   }
 ]
