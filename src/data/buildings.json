@@ -2,49 +2,31 @@
   {
     "name": "building_furnace",
     "cost": 10,
-    "production": 0.2,
-    "requirements": {
-      "emissions": 0
-    }
+    "production": 0.2
   },
   {
     "name": "building_car",
     "cost": 100,
-    "production": 2,
-    "requirements": {
-      "emissions": 50
-    }
+    "production": 2
   },
   {
     "name": "building_truck",
     "cost": 1500,
-    "production": 25,
-    "requirements": {
-      "emissions": 750
-    }
+    "production": 25
   },
   {
     "name": "building_plane",
     "cost": 2.5e4,
-    "production": 300,
-    "requirements": {
-      "emissions": 1e4
-    }
+    "production": 300
   },
   {
     "name": "building_factory",
     "cost": 5e5,
-    "production": 5e3,
-    "requirements": {
-      "emissions": 2.5e5
-    }
+    "production": 5e3
   },
   {
     "name": "building_power_plant",
     "cost": 1.5e7,
-    "production": 1.25e4,
-    "requirements": {
-      "emissions": 7.5e6
-    }
+    "production": 1.25e4
   }
 ]
