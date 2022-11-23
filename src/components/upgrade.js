@@ -1,6 +1,5 @@
 import React from 'react';
 const types = require('../data/upgradeTypes.json');
-const lang_en_US = require('../lang/en_US/upgrades.json');
 
 export default class Upgrade extends React.Component {
   constructor(props) {
@@ -31,7 +30,7 @@ export default class Upgrade extends React.Component {
         className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
         style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
       >
-        <p className="text-lg">{lang_en_US[this.props.data.name]}</p>
+        <p className="text-lg">{this.props.lang[this.props.data.name] || this.props.data.name}</p>
         <p>
           Cost: {this.props.data.cost} kgCO<sub>2</sub>
         </p>

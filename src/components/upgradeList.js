@@ -35,7 +35,7 @@ export default class UpgradeList extends React.Component {
       )
       .map((upgrade) => (
         <li key={upgrade.name}>
-          <Upgrade data={upgrade} onPurchase={this.props.onPurchase} />
+          <Upgrade data={upgrade} onPurchase={this.props.onPurchase} lang={this.props.lang} />
         </li>
       ));
 

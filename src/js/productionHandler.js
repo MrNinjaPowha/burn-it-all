@@ -5,8 +5,31 @@ export default class ProductionHandler {
     buildings: 1,
   };
 
-  getProduction(type) {
-    return this.multipliers.fuel * this.multipliers[type];
+  constructor(buildingsData) {
+    for (const building in buildingsData) {
+      // Initializes multipliers for all building types
+      this.multipliers[building] = 1;
+    }
+  }
+
+  getBuildingsProduction(buildings, deltaTime) {
+    /* Loops through all buildings and returns the total production */
+    let production = 0;
+    for (const [key, values] of Object.entries(buildings)) {
+      production +=
+        values.count *
+        values.production *
+        this.multipliers[key] *
+        this.multipliers.fuel *
+        this.multipliers.buildings *
+        (deltaTime / 1000);
+    }
+
+    return production;
+  }
+
+  getClickerProduction() {
+    return this.multipliers.fuel * this.multipliers.clicker;
   }
 
   newUpgrade(upgrade) {

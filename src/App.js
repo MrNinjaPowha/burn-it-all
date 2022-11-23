@@ -1,11 +1,24 @@
 import React from 'react';
 import './App.css';
+import BuildingStore from './components/buildingsStore';
 import EmissionsCounter from './components/emissionsCounter';
 import UpgradeList from './components/upgradeList';
 import ProductionHandler from './js/productionHandler';
+let buildingsJson = require('./data/buildings.json');
+const lang_en_US = require('./lang/en_US.json');
+
+let buildingsData = {};
+buildingsJson.forEach((building) => {
+  buildingsData[building.name] = {
+    cost: building.cost,
+    production: building.production,
+    count: 0,
+  };
+});
 
 export default class App extends React.Component {
-  productionHandler = new ProductionHandler();
+  productionHandler = new ProductionHandler(buildingsData);
+  lastUpdate = Date.now();
 
   constructor(props) {
     super(props);
@@ -14,28 +27,69 @@ export default class App extends React.Component {
       totalEmissions: 0,
       unlocks: [],
       upgrades: [],
+      buildings: buildingsData,
+      lang: lang_en_US,
     };
 
     this.onClickerClick = this.onClickerClick.bind(this);
-    this.onPurchase = this.onPurchase.bind(this);
+    this.gainPassiveEmissions = this.gainPassiveEmissions.bind(this);
+    this.onUpgradePurchase = this.onUpgradePurchase.bind(this);
+    this.onBuildingPurchase = this.onBuildingPurchase.bind(this);
+  }
+
+  componentDidMount() {
+    this.update = setInterval(() => this.gainPassiveEmissions(), 50);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.update);
   }
 
   onClickerClick() {
-    const production = this.productionHandler.getProduction('clicker');
+    const production = this.productionHandler.getClickerProduction();
     this.setState((state) => ({
       currentEmissions: state.currentEmissions + production,
       totalEmissions: state.totalEmissions + production,
     }));
   }
 
-  onPurchase(upgrade) {
+  gainPassiveEmissions() {
+    const now = Date.now();
+    const deltaTime = now - this.lastUpdate;
+    this.lastUpdate = now;
+
+    const production = this.productionHandler.getBuildingsProduction(
+      this.state.buildings,
+      deltaTime
+    );
+
+    this.setState((state) => ({
+      currentEmissions: state.currentEmissions + production,
+      totalEmissions: state.totalEmissions + production,
+    }));
+  }
+
+  onUpgradePurchase(upgrade) {
     if (this.state.totalEmissions >= upgrade.cost) {
       this.productionHandler.newUpgrade(upgrade);
-      this.state.upgrades.push(upgrade.name);
-      this.state.unlocks.push(upgrade.name);
 
       this.setState((state) => ({
+        upgrades: [...state.upgrades, upgrade.name],
+        unlocks: [...state.unlocks, upgrade.name],
         currentEmissions: state.currentEmissions - upgrade.cost,
+      }));
+    }
+  }
+
+  onBuildingPurchase(building) {
+    const cost = this.state.buildings[building].cost;
+    if (this.state.currentEmissions >= cost) {
+      let newBuildings = this.state.buildings;
+      newBuildings[building].count += 1;
+
+      this.setState((state) => ({
+        buildings: newBuildings,
+        currentEmissions: state.currentEmissions - cost,
       }));
     }
   }
@@ -48,20 +102,27 @@ export default class App extends React.Component {
         </div>
         <div className="flex h-full">
           <div className="flex w-1/5 min-w-max flex-col items-center p-8">
-            <EmissionsCounter emissions={this.state.currentEmissions} />
+            <EmissionsCounter emissions={this.state.currentEmissions} lang={this.state.lang} />
             <button onClick={this.onClickerClick}>BURN FUEL!</button>
           </div>
           <div className="flex-1 shadow-inner"></div>
           <div className="flex w-1/4 min-w-min flex-col overflow-auto p-2">
             <h2 className="font-header text-center text-3xl">Shop!</h2>
-            <h3 className="pt-2">Upgrades</h3>
+            <h3 className="pt-2 text-2xl">Upgrades</h3>
             <UpgradeList
               upgrades={this.state.upgrades}
               unlocks={this.state.unlocks}
               totalEmissions={this.state.totalEmissions}
-              onPurchase={this.onPurchase}
+              onPurchase={this.onUpgradePurchase}
+              lang={this.state.lang.upgrades}
             />
-            <h3 className="pt-2">Buildings</h3>
+            <h3 className="pt-2 text-2xl">Buildings</h3>
+            <BuildingStore
+              buildings={this.state.buildings}
+              totalEmissions={this.state.totalEmissions}
+              onPurchase={this.onBuildingPurchase}
+              lang={this.state.lang.buildings}
+            />
           </div>
         </div>
       </div>
