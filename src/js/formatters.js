@@ -19,8 +19,6 @@ function formatNumber(number) {
       return number >= item.value;
     });
 
-  console.log(number / item.value);
-
   return (number / item.value).toFixed(3).replace(regex, '$1') + item.symbol;
 }
 
