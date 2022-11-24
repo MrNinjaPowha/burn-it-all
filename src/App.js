@@ -3,8 +3,9 @@ import './App.css';
 import BuildingStore from './components/buildingsStore';
 import EmissionsCounter from './components/emissionsCounter';
 import UpgradeList from './components/upgradeList';
+import currentCost from './js/calculators';
 import ProductionHandler from './js/productionHandler';
-let buildingsJson = require('./data/buildings.json');
+const buildingsJson = require('./data/buildings.json');
 const lang_en_US = require('./lang/en_US.json');
 
 let buildingsData = {};
@@ -82,7 +83,10 @@ export default class App extends React.Component {
   }
 
   onBuildingPurchase(building) {
-    const cost = this.state.buildings[building].cost;
+    const cost = currentCost(
+      this.state.buildings[building].cost,
+      this.state.buildings[building].count
+    );
     if (this.state.currentEmissions >= cost) {
       let newBuildings = this.state.buildings;
       newBuildings[building].count += 1;
@@ -102,7 +106,11 @@ export default class App extends React.Component {
         </div>
         <div className="flex h-full">
           <div className="flex w-1/5 min-w-max flex-col items-center p-8">
-            <EmissionsCounter emissions={this.state.currentEmissions} lang={this.state.lang} />
+            <EmissionsCounter
+              emissions={this.state.currentEmissions}
+              production={this.productionHandler.getBuildingsProduction(this.state.buildings, 1000)}
+              lang={this.state.lang}
+            />
             <button onClick={this.onClickerClick}>BURN FUEL!</button>
           </div>
           <div className="flex-1 shadow-inner"></div>
