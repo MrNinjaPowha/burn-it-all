@@ -130,7 +130,7 @@ export default class App extends React.Component {
               unlocks={this.state.unlocks}
               totalEmissions={this.state.totalEmissions}
               onPurchase={this.onUpgradePurchase}
-              lang={this.state.lang.upgrades}
+              lang={this.state.lang}
             />
             <h3 className="pt-2 text-2xl">Buildings</h3>
             <BuildingStore

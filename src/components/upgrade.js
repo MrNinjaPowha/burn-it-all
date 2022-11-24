@@ -1,5 +1,4 @@
 import React from 'react';
-const types = require('../data/upgradeTypes.json');
 
 export default class Upgrade extends React.Component {
   constructor(props) {
@@ -30,17 +29,22 @@ export default class Upgrade extends React.Component {
         className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
         style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
       >
-        <p className="text-lg">{this.props.lang[this.props.data.name] || this.props.data.name}</p>
+        <p className="text-lg">
+          {this.props.lang.upgrades[this.props.data.name] || this.props.data.name}
+        </p>
         <p>
           Cost: {this.props.data.cost} kgCO<sub>2</sub>
         </p>
         <br />
         {this.props.data.effects.map((effect) =>
-          types.hasOwnProperty(effect.type) ? (
+          this.props.lang.upgradeDescriptions.hasOwnProperty(effect.type) ? (
             <p
               key={effect.type}
               dangerouslySetInnerHTML={{
-                __html: types[effect.type].desc.replace('#val', effect.value),
+                __html: this.props.lang.upgradeDescriptions[effect.type].replace(
+                  '#val',
+                  effect.value
+                ),
               }}
             />
           ) : (

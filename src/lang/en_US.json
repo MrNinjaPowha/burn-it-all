@@ -1,7 +1,7 @@
 {
   "buildings": {
     "building_furnace": "Furnace",
-    "building_car": "Private Car",
+    "building_car": "Car",
     "building_truck": "Truck",
     "building_plane": "Airplane",
     "building_factory": "Factory",
@@ -19,5 +19,16 @@
     "upgrade_clicker_1": "Enhance fuel burner",
     "upgrade_clicker_2": "Enhance fuel burner 2",
     "upgrade_clicker_3": "Enhance fuel burner 3"
+  },
+  "upgradeDescriptions": {
+    "start": "Switch to an unclean energy source to start producing emission.",
+    "fuel": "Increases all CO<sub>2</sub> emissions by #valx that of natural gas.",
+    "clicker": "Increases CO<sub>2</sub> emissions produced by clicking the button by #valx.",
+    "building_furnace": "Increases CO<sub>2</sub> emissions produced by furnaces by #valx.",
+    "building_car": "Increases CO<sub>2</sub> emissions produced by cars by #valx.",
+    "building_truck": "Increases CO<sub>2</sub> emissions produced by trucks by #valx.",
+    "building_plane": "Increases CO<sub>2</sub> emissions produced by airplanes by #valx.",
+    "building_factory": "Increases CO<sub>2</sub> emissions produced by factories by #valx.",
+    "building_power_plant": "Increases CO<sub>2</sub> emissions produced by power plants by #valx."
   }
 }
