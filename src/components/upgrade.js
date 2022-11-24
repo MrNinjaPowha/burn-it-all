@@ -67,7 +67,7 @@ export default class Upgrade extends React.Component {
             alt={this.props.data.name}
           />
         </button>
-        {this.state.focused ? this.getDescription() : <></>}
+        {this.state.focused ? this.getDescription() : null}
       </div>
     );
   }
