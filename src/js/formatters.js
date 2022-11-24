@@ -9,7 +9,7 @@ function formatNumber(number) {
     { value: 1e18, symbol: ' Sextillion' },
   ];
 
-  if (number < lookup[0].value) return `${number}`;
+  if (number < lookup[0].value) return `${number.toFixed(1)}`;
 
   const regex = /\.0+$|(\.[0-9]*[1-9])0+$/;
   var item = lookup
