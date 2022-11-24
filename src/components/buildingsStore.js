@@ -12,6 +12,7 @@ export default class BuildingStore extends React.Component {
           <li key={key}>
             <Building
               data={{ name: key, ...values }}
+              getProduction={this.props.getProduction}
               lang={this.props.lang}
               onPurchase={this.props.onPurchase}
             />
@@ -31,6 +32,8 @@ class Building extends React.Component {
       focused: false,
     };
 
+    this.textName = this.props.lang[this.props.data.name] || this.props.data.name;
+
     this.onFocusIn = this.onFocusIn.bind(this);
     this.onFocusOut = this.onFocusOut.bind(this);
   }
@@ -48,16 +51,35 @@ class Building extends React.Component {
   }
 
   getDescription() {
+    console.log();
     return (
       <div
         className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
         style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
       >
-        <p className="text-lg">{this.props.lang[this.props.data.name] || this.props.data.name}</p>
+        <p className="text-lg">{this.textName}</p>
         <p>
           Cost: {formatNumber(currentCost(this.props.data.cost, this.props.data.count))} kgCO
           <sub>2</sub>
         </p>
+        {this.props.data.count > 0 ? (
+          <>
+            <br />
+            <p>
+              Each {this.textName} produces{' '}
+              {formatNumber(
+                this.props.getProduction(this.props.data, 1000) / this.props.data.count
+              )}{' '}
+              kgCO
+              <sub>2</sub>/s
+            </p>
+            <p>
+              All {this.props.data.count} {this.textName}s produce{' '}
+              {formatNumber(this.props.getProduction(this.props.data, 1000))} kgCO
+              <sub>2</sub>/s
+            </p>
+          </>
+        ) : null}
       </div>
     );
   }
