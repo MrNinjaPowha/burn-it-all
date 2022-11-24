@@ -9,15 +9,19 @@ function formatNumber(number) {
     { value: 1e18, symbol: ' Sextillion' },
   ];
 
+  if (number < lookup[0].value) return `${number}`;
+
   const regex = /\.0+$|(\.[0-9]*[1-9])0+$/;
   var item = lookup
     .slice()
     .reverse()
-    .find(function (item) {
+    .find((item) => {
       return number >= item.value;
     });
 
-  return item ? (number / item.value).toFixed(3).replace(regex, '$1') + item.symbol : '0';
+  console.log(number / item.value);
+
+  return (number / item.value).toFixed(3).replace(regex, '$1') + item.symbol;
 }
 
 export default formatNumber;
