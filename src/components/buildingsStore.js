@@ -51,7 +51,6 @@ class Building extends React.Component {
   }
 
   getDescription() {
-    console.log();
     return (
       <div
         className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
