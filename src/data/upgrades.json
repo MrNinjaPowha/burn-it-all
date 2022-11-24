@@ -113,7 +113,7 @@
   {
     "name": "upgrade_clicker_2",
     "image": "clicker_2.svg",
-    "cost": 1e3,
+    "cost": 500,
     "effects": [
       {
         "type": "clicker",
@@ -125,7 +125,7 @@
   {
     "name": "upgrade_clicker_3",
     "image": "clicker_3.svg",
-    "cost": 5e4,
+    "cost": 5e3,
     "effects": [
       {
         "type": "clicker",
