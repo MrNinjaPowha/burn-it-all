@@ -34,6 +34,7 @@ export default class App extends React.Component {
 
     this.onClickerClick = this.onClickerClick.bind(this);
     this.gainPassiveEmissions = this.gainPassiveEmissions.bind(this);
+    this.getSingleBuildingProduction = this.getSingleBuildingProduction.bind(this);
     this.onUpgradePurchase = this.onUpgradePurchase.bind(this);
     this.onBuildingPurchase = this.onBuildingPurchase.bind(this);
   }
@@ -68,6 +69,13 @@ export default class App extends React.Component {
       currentEmissions: state.currentEmissions + production,
       totalEmissions: state.totalEmissions + production,
     }));
+  }
+
+  getSingleBuildingProduction(buildingData) {
+    let building = {};
+    building[buildingData.name] = buildingData;
+
+    return this.productionHandler.getBuildingsProduction(building, 1000);
   }
 
   onUpgradePurchase(upgrade) {
@@ -127,6 +135,7 @@ export default class App extends React.Component {
             <h3 className="pt-2 text-2xl">Buildings</h3>
             <BuildingStore
               buildings={this.state.buildings}
+              getProduction={this.getSingleBuildingProduction}
               totalEmissions={this.state.totalEmissions}
               onPurchase={this.onBuildingPurchase}
               lang={this.state.lang.buildings}
