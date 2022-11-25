@@ -22,7 +22,7 @@
   },
   "upgradeDescriptions": {
     "start": "Switch to an unclean energy source to start producing emission.",
-    "fuel": "Increases all CO<sub>2</sub> emissions by #valx that of natural gas.",
+    "all": "Increases all CO<sub>2</sub> emissions by #valx.",
     "clicker": "Increases CO<sub>2</sub> emissions produced by clicking the button by #valx.",
     "building_furnace": "Increases CO<sub>2</sub> emissions produced by furnaces by #valx.",
     "building_car": "Increases CO<sub>2</sub> emissions produced by cars by #valx.",

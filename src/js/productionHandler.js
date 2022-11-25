@@ -1,6 +1,6 @@
 export default class ProductionHandler {
   multipliers = {
-    fuel: 0,
+    all: 0,
     clicker: 1,
     buildings: 1,
   };
@@ -20,7 +20,7 @@ export default class ProductionHandler {
         values.count *
         values.production *
         this.multipliers[key] *
-        this.multipliers.fuel *
+        this.multipliers.all *
         this.multipliers.buildings *
         (deltaTime / 1000);
     }
@@ -29,13 +29,12 @@ export default class ProductionHandler {
   }
 
   getClickerProduction() {
-    return this.multipliers.fuel * this.multipliers.clicker;
+    return this.multipliers.all * this.multipliers.clicker;
   }
 
   newUpgrade(upgrade) {
     upgrade.effects.forEach((effect) => {
-      if (effect.type === 'start') this.multipliers.fuel = 1;
-      if (effect.type === 'fuel') this.multipliers.fuel = effect.value;
+      if (effect.type === 'start') this.multipliers.all = 1;
       else if (this.multipliers.hasOwnProperty(effect.type))
         this.multipliers[effect.type] *= effect.value;
     });
