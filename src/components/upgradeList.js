@@ -33,6 +33,7 @@ export default class UpgradeList extends React.Component {
           upgrade.requirements.every((requirement) => this.props.unlocks.includes(requirement)) &&
           this.props.totalEmissions >= upgrade.cost / 2
       )
+      .sort((a, b) => a.cost - b.cost)
       .map((upgrade) => (
         <li key={upgrade.name}>
           <Upgrade data={upgrade} onPurchase={this.props.onPurchase} lang={this.props.lang} />
