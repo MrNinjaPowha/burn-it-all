@@ -1,6 +1,7 @@
 import React from 'react';
 import currentCost from '../js/calculators';
 import formatNumber from '../js/formatters';
+import HoverDescription from './non-unique/hoverDescription';
 
 export default class BuildingStore extends React.Component {
   render() {
@@ -52,10 +53,7 @@ class Building extends React.Component {
 
   getDescription() {
     return (
-      <div
-        className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
-        style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
-      >
+      <HoverDescription>
         <p className="text-lg">{this.textName}</p>
         <p>
           Cost: {formatNumber(currentCost(this.props.data.cost, this.props.data.count))} kgCO
@@ -79,7 +77,7 @@ class Building extends React.Component {
             </p>
           </>
         ) : null}
-      </div>
+      </HoverDescription>
     );
   }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import HoverDescription from './non-unique/hoverDescription';
 
 export default class Upgrade extends React.Component {
   constructor(props) {
@@ -25,10 +26,7 @@ export default class Upgrade extends React.Component {
 
   getDescription() {
     return (
-      <div
-        className="absolute rounded border border-opacity-75 bg-black bg-opacity-75 px-2 py-1 text-sm text-white"
-        style={{ left: document.getElementById('upgrade-list').getBoundingClientRect().left }}
-      >
+      <HoverDescription left={document.getElementById('upgrade-list').getBoundingClientRect().left}>
         <p className="text-lg">
           {this.props.lang.upgrades[this.props.data.name] || this.props.data.name}
         </p>
@@ -51,7 +49,7 @@ export default class Upgrade extends React.Component {
             <p key={effect.type}>???</p>
           )
         )}
-      </div>
+      </HoverDescription>
     );
   }
 
