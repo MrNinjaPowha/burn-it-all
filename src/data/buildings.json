@@ -7,26 +7,26 @@
   {
     "name": "building_car",
     "cost": 100,
-    "production": 2
+    "production": 1
   },
   {
     "name": "building_truck",
     "cost": 1500,
-    "production": 25
+    "production": 10
   },
   {
     "name": "building_plane",
     "cost": 2.5e4,
-    "production": 300
+    "production": 75
   },
   {
     "name": "building_factory",
     "cost": 5e5,
-    "production": 5e3
+    "production": 250
   },
   {
     "name": "building_power_plant",
     "cost": 1.5e7,
-    "production": 1.25e4
+    "production": 1e3
   }
 ]
