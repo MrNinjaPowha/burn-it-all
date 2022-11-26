@@ -1,5 +1,5 @@
 import React from 'react';
-import HoverDescription from './non-unique/hoverDescription';
+import HoverDescription from './hoverDescription';
 
 export default class Upgrade extends React.Component {
   constructor(props) {

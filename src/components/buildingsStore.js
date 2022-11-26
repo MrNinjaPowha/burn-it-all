@@ -1,7 +1,7 @@
 import React from 'react';
 import currentCost from '../js/calculators';
 import formatNumber from '../js/formatters';
-import HoverDescription from './non-unique/hoverDescription';
+import HoverDescription from './hoverDescription';
 
 export default class BuildingStore extends React.Component {
   render() {
@@ -107,7 +107,7 @@ class Building extends React.Component {
           </div>
           <span className="text-3xl">{this.props.data.count}</span>
         </button>
-        {this.state.focused ? this.getDescription() : <></>}
+        {this.state.focused ? this.getDescription() : null}
       </div>
     );
   }
