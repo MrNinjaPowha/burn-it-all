@@ -32,7 +32,7 @@ export default class App extends React.Component {
       lang: lang_en_US,
     };
 
-    this.onClickerClick = this.onClickerClick.bind(this);
+    this.addEmissions = this.addEmissions.bind(this);
     this.gainPassiveEmissions = this.gainPassiveEmissions.bind(this);
     this.getSingleBuildingProduction = this.getSingleBuildingProduction.bind(this);
     this.onUpgradePurchase = this.onUpgradePurchase.bind(this);
@@ -47,11 +47,10 @@ export default class App extends React.Component {
     clearInterval(this.update);
   }
 
-  onClickerClick() {
-    const production = this.productionHandler.getClickerProduction();
+  addEmissions(amount) {
     this.setState((state) => ({
-      currentEmissions: state.currentEmissions + production,
-      totalEmissions: state.totalEmissions + production,
+      currentEmissions: state.currentEmissions + amount,
+      totalEmissions: state.totalEmissions + amount,
     }));
   }
 
@@ -65,10 +64,7 @@ export default class App extends React.Component {
       deltaTime
     );
 
-    this.setState((state) => ({
-      currentEmissions: state.currentEmissions + production,
-      totalEmissions: state.totalEmissions + production,
-    }));
+    this.addEmissions(production);
   }
 
   getSingleBuildingProduction(buildingData) {
@@ -119,7 +115,11 @@ export default class App extends React.Component {
               production={this.productionHandler.getBuildingsProduction(this.state.buildings, 1000)}
               lang={this.state.lang}
             />
-            <button onClick={this.onClickerClick}>BURN FUEL!</button>
+            <button
+              onClick={() => this.addEmissions(this.productionHandler.getClickerProduction())}
+            >
+              BURN FUEL!
+            </button>
           </div>
           <div className="flex-1 shadow-inner"></div>
           <div className="flex w-1/4 min-w-min flex-col overflow-auto p-2">
