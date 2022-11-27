@@ -21,9 +21,12 @@
     "upgrade_clicker_3": "Enhance fuel burner 3",
     "upgrade_clicker_4": "Enhance fuel burner 4",
     "upgrade_clicker_5": "Enhance fuel burner 5",
-    "upgrade_furnace_1": "Enhance furnace 1",
-    "upgrade_furnace_2": "Enhance furnace 2",
-    "upgrade_furnace_3": "Enhance furnace 3"
+    "upgrade_furnace_1": "Extra hot furnace",
+    "upgrade_furnace_2": "Larger furnace",
+    "upgrade_furnace_3": "Huge furnace",
+    "upgrade_car_1": "Ban electric cars",
+    "upgrade_car_2": "More SUVs",
+    "upgrade_car_3": "Larger cars"
   },
   "upgradeDescriptions": {
     "start": "Switch to an unclean energy source to start producing emission.",

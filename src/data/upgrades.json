@@ -192,6 +192,42 @@
         "value": 2
       }
     ],
+    "requirements": ["upgrade_furnace_3"]
+  },
+  {
+    "name": "upgrade_car_1",
+    "image": "car_1.svg",
+    "cost": 1500,
+    "effects": [
+      {
+        "type": "building_car",
+        "value": 2
+      }
+    ],
+    "requirements": []
+  },
+  {
+    "name": "upgrade_car_2",
+    "image": "car_2.svg",
+    "cost": 7500,
+    "effects": [
+      {
+        "type": "building_car",
+        "value": 2
+      }
+    ],
+    "requirements": []
+  },
+  {
+    "name": "upgrade_car_3",
+    "image": "car_3.svg",
+    "cost": 5e4,
+    "effects": [
+      {
+        "type": "building_car",
+        "value": 2
+      }
+    ],
     "requirements": []
   }
 ]
