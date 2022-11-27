@@ -8,7 +8,7 @@ export default class BuildingStore extends React.Component {
     let buildings = [];
 
     for (const [key, values] of Object.entries(this.props.buildings)) {
-      if (this.props.totalEmissions >= values.cost / 2) {
+      if (this.props.totalEmissions >= values.cost / 2 - 10) {
         buildings.push(
           <li key={key}>
             <Building
