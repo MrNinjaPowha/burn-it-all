@@ -18,7 +18,12 @@
     "upgrade_charcoal": "Fuel: Charcoal",
     "upgrade_clicker_1": "Enhance fuel burner",
     "upgrade_clicker_2": "Enhance fuel burner 2",
-    "upgrade_clicker_3": "Enhance fuel burner 3"
+    "upgrade_clicker_3": "Enhance fuel burner 3",
+    "upgrade_clicker_4": "Enhance fuel burner 4",
+    "upgrade_clicker_5": "Enhance fuel burner 5",
+    "upgrade_furnace_1": "Enhance furnace 1",
+    "upgrade_furnace_2": "Enhance furnace 2",
+    "upgrade_furnace_3": "Enhance furnace 3"
   },
   "upgradeDescriptions": {
     "start": "Switch to an unclean energy source to start producing emission.",
