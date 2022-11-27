@@ -105,12 +105,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="h-full w-full">
+      <div className="h-screen w-screen overflow-hidden">
         <div className="w-full py-2 px-4 shadow">
           <h1 className="text-5xl">Burn It All</h1>
         </div>
         <div className="flex h-full">
-          <div className="flex w-1/5 min-w-max flex-col items-center p-8">
+          <div className="flex h-full w-1/5 min-w-max flex-col items-center p-8">
             <EmissionsCounter
               emissions={this.state.currentEmissions}
               production={this.productionHandler.getBuildingsProduction(this.state.buildings, 1000)}
@@ -120,8 +120,8 @@ export default class App extends React.Component {
               onClick={() => this.addEmissions(this.productionHandler.getClickerProduction())}
             />
           </div>
-          <div className="flex-1 shadow-inner"></div>
-          <div className="flex w-1/4 min-w-min flex-col overflow-auto p-2">
+          <div className="bg-dirty-brick-wall flex-1 bg-repeat shadow-inner"></div>
+          <div className="flex w-1/4 min-w-min flex-col overflow-y-scroll p-2">
             <h2 className="font-header text-center text-3xl">Shop!</h2>
             <h3 className="pt-2 text-2xl">Upgrades</h3>
             <UpgradeList

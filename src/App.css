@@ -20,3 +20,8 @@ img {
 .upgrade:active {
   transform: scale(0.85);
 }
+
+.bg-dirty-brick-wall {
+  background-image: url(./images/backgrounds/dirty_brick_wall.svg);
+  background-size: 10rem;
+}
