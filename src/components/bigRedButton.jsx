@@ -7,12 +7,12 @@ export default class BigRedButton extends React.Component {
     return (
       <div className="relative h-48 w-48" onClick={this.props.onClick}>
         <img
-          className="absolute top-0 cursor-pointer rounded-full transition-opacity duration-100 active:opacity-0"
+          className="absolute top-0 z-10 cursor-pointer rounded-full transition-opacity duration-100 active:opacity-0"
           src={buttonTexture}
           alt="Burn fuel"
         />
         <img
-          className="absolute top-0 -z-10 cursor-pointer rounded-full"
+          className="absolute top-0 cursor-pointer rounded-full"
           src={buttonPressedTexture}
           alt="Burn fuel"
         />
