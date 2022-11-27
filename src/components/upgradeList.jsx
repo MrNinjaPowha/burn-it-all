@@ -40,7 +40,7 @@ export default class UpgradeList extends React.Component {
         </li>
       ));
 
-    if (!this.state.focused) upgradesHTML.splice(0, upgradesHTML.length - 5);
+    if (!this.state.focused) upgradesHTML.splice(5);
 
     return (
       <ul
