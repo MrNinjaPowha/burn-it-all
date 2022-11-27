@@ -83,7 +83,7 @@ class Building extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="relative">
         <button
           className="flex max-h-min w-full items-center justify-between gap-2 rounded bg-gray-200 p-2"
           onClick={() => this.props.onPurchase(this.props.data.name)}
