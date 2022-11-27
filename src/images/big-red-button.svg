@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Lager_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:url(#SVGID_1_);stroke-width:5;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:url(#SVGID_00000003086148544641886250000004833750209326214025_);stroke-width:5;stroke-miterlimit:10;}
+	.st2{fill:url(#SVGID_00000105395723437752482780000014403906952832679820_);}
+	.st3{fill:#FFFFFF;}
+	.st4{font-family:'Arial';}
+	.st5{font-size:19px;}
+</style>
+<radialGradient id="SVGID_1_" cx="50" cy="50" r="43" gradientTransform="matrix(1 0 0 -1 0 100)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0.9" style="stop-color:#646363"/>
+	<stop  offset="1" style="stop-color:#7C7C7B"/>
+</radialGradient>
+<circle class="st0" cx="50" cy="50" r="40.5"/>
+<linearGradient id="SVGID_00000145747369221437898940000005919810108367774646_" gradientUnits="userSpaceOnUse" x1="19.948" y1="80.052" x2="80.052" y2="19.948" gradientTransform="matrix(1.125 0 0 -1.125 -6.25 106.25)">
+	<stop  offset="0" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#878787"/>
+</linearGradient>
+<circle style="fill:none;stroke:url(#SVGID_00000145747369221437898940000005919810108367774646_);stroke-width:5;stroke-miterlimit:10;" cx="50" cy="50" r="45"/>
+<radialGradient id="SVGID_00000010996638968479937680000000558925757663808644_" cx="50" cy="50" r="38" gradientTransform="matrix(1 0 0 -1 0 100)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0.9" style="stop-color:#E42213"/>
+	<stop  offset="1" style="stop-color:#F5A488"/>
+</radialGradient>
+<circle style="fill:url(#SVGID_00000010996638968479937680000000558925757663808644_);" cx="50" cy="50" r="38"/>
+<text transform="matrix(1 0 0 1 23.0818 46.5679)" class="st3 st4 st5">BURN </text>
+<text transform="matrix(1 0 0 1 23.0818 63.5679)" class="st3 st4 st5">FUEL!</text>
+</svg>

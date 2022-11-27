@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import BigRedButton from './components/bigRedButton';
 import BuildingStore from './components/buildingsStore';
 import EmissionsCounter from './components/emissionsCounter';
 import UpgradeList from './components/upgradeList';
@@ -115,11 +116,9 @@ export default class App extends React.Component {
               production={this.productionHandler.getBuildingsProduction(this.state.buildings, 1000)}
               lang={this.state.lang}
             />
-            <button
+            <BigRedButton
               onClick={() => this.addEmissions(this.productionHandler.getClickerProduction())}
-            >
-              BURN FUEL!
-            </button>
+            />
           </div>
           <div className="flex-1 shadow-inner"></div>
           <div className="flex w-1/4 min-w-min flex-col overflow-auto p-2">
