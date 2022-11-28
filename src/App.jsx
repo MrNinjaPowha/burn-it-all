@@ -139,6 +139,11 @@ export default class App extends React.Component {
               onPurchase={this.onBuildingPurchase}
               lang={this.state.lang.buildings}
             />
+            <div>
+              <br />
+              <br />
+              <br />
+            </div>
           </div>
         </div>
       </div>
