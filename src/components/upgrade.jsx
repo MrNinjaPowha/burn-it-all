@@ -26,7 +26,10 @@ export default class Upgrade extends React.Component {
 
   getDescription() {
     return (
-      <HoverDescription left={document.getElementById('upgrade-list').getBoundingClientRect().left}>
+      <HoverDescription
+        left={document.getElementById('upgrade-list').getBoundingClientRect().left}
+        top={document.getElementById(this.props.data.name).getBoundingClientRect().bottom}
+      >
         <p className="text-lg">
           {this.props.lang.upgrades[this.props.data.name] || this.props.data.name}
         </p>
@@ -55,7 +58,7 @@ export default class Upgrade extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id={this.props.data.name}>
         <button
           className="upgrade aspect-square w-full"
           onClick={() => this.props.onPurchase(this.props.data)}
