@@ -20,7 +20,7 @@
         "value": 2
       }
     ],
-    "requirements": []
+    "requirements": ["upgrade_natural_gas"]
   },
   {
     "name": "upgrade_gasoline",
@@ -168,7 +168,7 @@
         "value": 2
       }
     ],
-    "requirements": []
+    "requirements": ["building_furnace"]
   },
   {
     "name": "upgrade_furnace_2",
@@ -180,7 +180,7 @@
         "value": 2
       }
     ],
-    "requirements": []
+    "requirements": ["building_furnace"]
   },
   {
     "name": "upgrade_furnace_3",
@@ -192,7 +192,7 @@
         "value": 2
       }
     ],
-    "requirements": ["upgrade_furnace_3"]
+    "requirements": ["building_furnace", "upgrade_furnace_2"]
   },
   {
     "name": "upgrade_car_1",
@@ -204,7 +204,7 @@
         "value": 2
       }
     ],
-    "requirements": []
+    "requirements": ["building_car"]
   },
   {
     "name": "upgrade_car_2",
@@ -216,7 +216,7 @@
         "value": 2
       }
     ],
-    "requirements": []
+    "requirements": ["building_car"]
   },
   {
     "name": "upgrade_car_3",
@@ -228,6 +228,6 @@
         "value": 2
       }
     ],
-    "requirements": []
+    "requirements": ["building_car"]
   }
 ]

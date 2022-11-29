@@ -92,12 +92,14 @@ export default class App extends React.Component {
       this.state.buildings[building].cost,
       this.state.buildings[building].count
     );
+
     if (this.state.currentEmissions >= cost) {
       let newBuildings = this.state.buildings;
       newBuildings[building].count += 1;
 
       this.setState((state) => ({
         buildings: newBuildings,
+        unlocks: [...state.unlocks, building],
         currentEmissions: state.currentEmissions - cost,
       }));
     }
@@ -121,7 +123,7 @@ export default class App extends React.Component {
             />
           </div>
           <div className="bg-dirty-brick-wall flex-1 bg-repeat shadow-inner"></div>
-          <div className="flex w-1/4 min-w-min flex-col overflow-y-scroll p-2">
+          <div className="flex w-1/4 min-w-min flex-col overflow-y-auto p-2">
             <h2 className="font-header text-center text-3xl">Shop!</h2>
             <h3 className="pt-2 text-2xl">Upgrades</h3>
             <UpgradeList
