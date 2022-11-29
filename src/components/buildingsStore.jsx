@@ -94,7 +94,7 @@ class Building extends React.Component {
         >
           <div className="flex items-center gap-2">
             <img
-              className="aspect-square w-16 overflow-hidden"
+              className="aspect-square w-16"
               src={`${process.env.PUBLIC_URL}/images/buildings/${this.props.data.image}`}
               alt={this.props.data.name}
             />

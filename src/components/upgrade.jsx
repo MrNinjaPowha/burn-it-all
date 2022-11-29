@@ -68,7 +68,6 @@ export default class Upgrade extends React.Component {
           onBlur={this.onFocusOut}
         >
           <img
-            className="overflow-hidden"
             src={`${process.env.PUBLIC_URL}/images/upgrades/${this.props.data.image}`}
             alt={this.props.data.name}
           />
