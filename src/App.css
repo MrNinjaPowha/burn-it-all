@@ -25,3 +25,13 @@ img {
   background-image: url(./images/backgrounds/dirty_brick_wall.svg);
   background-size: 10rem;
 }
+
+.bg-warning-pattern {
+  background-image: url(./images/backgrounds/warning-pattern.svg);
+  background-size: 1rem;
+}
+
+.bg-warning-pattern-horizontal {
+  background-image: url(./images/backgrounds/warning-pattern-horizontal.svg);
+  background-size: 1rem;
+}

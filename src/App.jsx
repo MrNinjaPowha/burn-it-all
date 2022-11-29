@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import BigRedButton from './components/bigRedButton';
+import BuildingsDisplay from './components/buildingsDisplay';
 import BuildingStore from './components/buildingsStore';
 import EmissionsCounter from './components/emissionsCounter';
 import UpgradeList from './components/upgradeList';
@@ -122,7 +123,15 @@ export default class App extends React.Component {
               onClick={() => this.addEmissions(this.productionHandler.getClickerProduction())}
             />
           </div>
-          <div className="bg-dirty-brick-wall flex-1 bg-repeat shadow-inner"></div>
+          <div className="bg-warning-pattern w-4" />
+          <div className="flex-1">
+            <BuildingsDisplay
+              buildings={this.state.buildings}
+              upgrades={this.state.upgrades}
+              lang={this.state.lang}
+            />
+          </div>
+          <div className="bg-warning-pattern w-4" />
           <div className="flex w-1/4 min-w-min flex-col overflow-y-auto p-2">
             <h2 className="font-header text-center text-3xl">Shop!</h2>
             <h3 className="pt-2 text-2xl">Upgrades</h3>
