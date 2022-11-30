@@ -123,12 +123,13 @@ export default class App extends React.Component {
             />
           </div>
           <div className="bg-warning-pattern min-w-4" />
-          <div className="min-w-0 flex-grow overflow-hidden">
+          <div className="min-w-0 flex-grow overflow-hidden overflow-y-auto">
             <BuildingsDisplay
               buildings={this.state.buildings}
               upgrades={this.state.upgrades}
               lang={this.state.lang}
             />
+            <div>{Array(2).fill(<br />)}</div>
           </div>
           <div className="bg-warning-pattern min-w-4" />
           <div className="flex w-1/4 min-w-[25%] flex-col overflow-y-auto p-2">

@@ -51,7 +51,7 @@ class DisplayFrame extends React.Component {
     }
 
     return (
-      <ul className="flex max-w-full gap-1" key={`row${currentRow}`}>
+      <ul className="flex gap-1" key={`row${currentRow}`}>
         {images}
       </ul>
     );
@@ -66,7 +66,9 @@ class DisplayFrame extends React.Component {
 
     return (
       <>
-        <ul className={`display-bg-${this.props.data.background} flex max-w-full flex-col gap-1`}>
+        <ul
+          className={`display-bg-${this.props.data.background} flex h-24 flex-col justify-evenly gap-1`}
+        >
           {rows}
         </ul>
         <div className="bg-warning-pattern-horizontal h-4 w-full" />
