@@ -13,8 +13,7 @@ const lang_en_US = require('./lang/en_US.json');
 let buildingsData = {};
 buildingsJson.forEach((building) => {
   buildingsData[building.name] = {
-    cost: building.cost,
-    production: building.production,
+    ...building,
     count: 0,
   };
 });
@@ -26,8 +25,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentEmissions: 0,
-      totalEmissions: 0,
+      currentEmissions: 1000000000,
+      totalEmissions: 1000000000,
       unlocks: [],
       upgrades: [],
       buildings: buildingsData,
@@ -112,7 +111,7 @@ export default class App extends React.Component {
         <div className="w-full py-2 px-4 shadow">
           <h1 className="text-5xl">Burn It All</h1>
         </div>
-        <div className="flex h-full">
+        <div className="flex h-full w-full grid-cols-5">
           <div className="flex h-full w-1/5 min-w-max flex-col items-center p-8">
             <EmissionsCounter
               emissions={this.state.currentEmissions}
@@ -123,16 +122,16 @@ export default class App extends React.Component {
               onClick={() => this.addEmissions(this.productionHandler.getClickerProduction())}
             />
           </div>
-          <div className="bg-warning-pattern w-4" />
-          <div className="flex-1">
+          <div className="bg-warning-pattern min-w-4" />
+          <div className="min-w-0 flex-grow overflow-hidden">
             <BuildingsDisplay
               buildings={this.state.buildings}
               upgrades={this.state.upgrades}
               lang={this.state.lang}
             />
           </div>
-          <div className="bg-warning-pattern w-4" />
-          <div className="flex w-1/4 min-w-min flex-col overflow-y-auto p-2">
+          <div className="bg-warning-pattern min-w-4" />
+          <div className="flex w-1/4 min-w-[25%] flex-col overflow-y-auto p-2">
             <h2 className="font-header text-center text-3xl">Shop!</h2>
             <h3 className="pt-2 text-2xl">Upgrades</h3>
             <UpgradeList
