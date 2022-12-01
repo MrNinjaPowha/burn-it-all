@@ -76,7 +76,7 @@ export default class App extends React.Component {
   }
 
   onUpgradePurchase(upgrade) {
-    if (this.state.totalEmissions >= upgrade.cost) {
+    if (this.state.currentEmissions >= upgrade.cost) {
       this.productionHandler.newUpgrade(upgrade);
 
       this.setState((state) => ({
