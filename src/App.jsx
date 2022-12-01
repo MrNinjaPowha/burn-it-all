@@ -25,8 +25,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentEmissions: 1000000000,
-      totalEmissions: 1000000000,
+      currentEmissions: 10000000000,
+      totalEmissions: 10000000000,
       unlocks: [],
       upgrades: [],
       buildings: buildingsData,
