@@ -123,7 +123,7 @@ export default class App extends React.Component {
             />
           </div>
           <div className="bg-warning-pattern min-w-4" />
-          <div className="min-w-0 flex-grow overflow-hidden overflow-y-auto">
+          <div className="min-w-0 flex-grow overflow-hidden overflow-y-auto after:block">
             <BuildingsDisplay
               buildings={this.state.buildings}
               upgrades={this.state.upgrades}
@@ -132,7 +132,7 @@ export default class App extends React.Component {
             <div>{Array(2).fill(<br />)}</div>
           </div>
           <div className="bg-warning-pattern min-w-4" />
-          <div className="flex w-1/4 min-w-[25%] flex-col overflow-y-auto p-2">
+          <div className="w-1/4 min-w-[25%] overflow-y-auto p-2 after:block after:h-44">
             <h2 className="font-header text-center text-3xl">Shop!</h2>
             <h3 className="pt-2 text-2xl">Upgrades</h3>
             <UpgradeList
@@ -150,7 +150,6 @@ export default class App extends React.Component {
               onPurchase={this.onBuildingPurchase}
               lang={this.state.lang.buildings}
             />
-            <div>{Array(7).fill(<br />)}</div>
           </div>
         </div>
       </div>
