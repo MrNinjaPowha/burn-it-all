@@ -7,7 +7,7 @@
     "production": 0.2,
     "display": {
       "type": "scattered",
-      "rows": [0.5, 0.7, 0.9],
+      "rows": [0.7, 0.85, 1],
       "size": 0.3
     }
   },
