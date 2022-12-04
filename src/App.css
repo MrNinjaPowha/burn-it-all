@@ -41,3 +41,7 @@ canvas {
   background-image: url(./images/backgrounds/warning-pattern-horizontal.svg);
   background-size: 1rem;
 }
+
+.bg-display-road {
+  background-image: url(./images/backgrounds/road.svg);
+}

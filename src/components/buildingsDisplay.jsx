@@ -31,15 +31,21 @@ class DisplayCanvas extends React.Component {
 
   renderImages() {
     let images = [];
+    const rowsCount = this.props.data.display.rows.length;
+    const scattered = this.props.data.display.type === 'scattered';
 
     for (let i = 0; i < this.props.data.count; i++) {
       const style = {
         position: 'absolute',
         height: `${100 * this.props.data.display.size}%`,
         width: 'auto',
-        bottom: `${100 - 100 * this.props.data.display.rows[i % 3] + 5 * Math.random()}%`,
-        left: `${Math.floor(i / 3) * 30 + 5 * Math.random()}px`,
-        zIndex: i % 3,
+        bottom: `${
+          100 -
+          100 * this.props.data.display.rows[i % rowsCount] +
+          (scattered ? 5 * Math.random() : 0)
+        }%`,
+        left: `${Math.floor(i / rowsCount) * 30 + (scattered ? 5 * Math.random() : 0)}px`,
+        zIndex: i % rowsCount,
       };
 
       if (this.imageRefs[i]) {
@@ -64,7 +70,10 @@ class DisplayCanvas extends React.Component {
 
   render() {
     return (
-      <div className="relative h-28 w-full overflow-hidden" ref={this.setFrame}>
+      <div
+        className={`relative h-28 w-full overflow-hidden bg-display-${this.props.data.background}`}
+        ref={this.setFrame}
+      >
         {this.renderImages()}
       </div>
     );
