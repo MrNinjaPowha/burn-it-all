@@ -2,7 +2,7 @@
   {
     "name": "building_furnace",
     "image": "furnace.svg",
-    "background": "inside_factory.svg",
+    "background": "inside_factory",
     "cost": 10,
     "production": 0.2,
     "display": {
@@ -14,56 +14,61 @@
   {
     "name": "building_car",
     "image": "car.svg",
-    "background": "road.svg",
+    "background": "road",
     "cost": 100,
     "production": 1,
     "display": {
       "type": "straight",
-      "rows": [0.5, 0.8]
+      "rows": [0.5, 0.8],
+      "size": 0.3
     }
   },
   {
     "name": "building_truck",
     "image": "truck.svg",
-    "background": "road.svg",
+    "background": "road",
     "cost": 1500,
     "production": 10,
     "display": {
       "type": "straight",
-      "rows": [0.5, 0.8]
+      "rows": [0.5, 0.8],
+      "size": 0.3
     }
   },
   {
     "name": "building_plane",
     "image": "plane.svg",
-    "background": "sky.svg",
+    "background": "sky",
     "cost": 2.5e4,
     "production": 75,
     "display": {
       "type": "scattered",
-      "rows": [0.6]
+      "rows": [0.8],
+      "size": 0.6
     }
   },
   {
     "name": "building_factory",
     "image": "factory.svg",
-    "background": "outside.svg",
+    "background": "industry",
     "cost": 5e5,
     "production": 250,
     "display": {
       "type": "straight",
-      "rows": [0.6]
+      "rows": [0.6],
+      "size": 0.5
     }
   },
   {
     "name": "building_power_plant",
     "image": "power_plant.svg",
-    "background": "outside.svg",
+    "background": "industry",
     "cost": 1.5e7,
     "production": 1e3,
     "display": {
       "type": "straight",
-      "rows": [0.6]
+      "rows": [0.7],
+      "size": 0.5
     }
   }
 ]
