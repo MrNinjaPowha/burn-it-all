@@ -24,7 +24,10 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
+
+    const saveData = this.loadFromLocal();
+
+    this.state = saveData.state || {
       currentEmissions: 10000000000,
       totalEmissions: 10000000000,
       unlocks: [],
@@ -33,19 +36,55 @@ export default class App extends React.Component {
       lang: lang_en_US,
     };
 
+    if (saveData.productionMultipliers) {
+      this.productionHandler.multipliers = saveData.productionMultipliers;
+    }
+
     this.addEmissions = this.addEmissions.bind(this);
     this.gainPassiveEmissions = this.gainPassiveEmissions.bind(this);
     this.getSingleBuildingProduction = this.getSingleBuildingProduction.bind(this);
     this.onUpgradePurchase = this.onUpgradePurchase.bind(this);
     this.onBuildingPurchase = this.onBuildingPurchase.bind(this);
+
+    window.onunload = () => this.saveToLocal();
   }
 
   componentDidMount() {
     this.update = setInterval(() => this.gainPassiveEmissions(), 50);
+    this.autoSave = setInterval(() => this.saveToLocal(), 60 * 1000); // saves progress every minute
+    localStorage.setItem('restart', false);
   }
 
   componentWillUnmount() {
     clearInterval(this.update);
+    clearInterval(this.autoSave);
+  }
+
+  saveToLocal() {
+    const saveData = {};
+
+    saveData.state = this.state;
+    saveData.productionMultipliers = this.productionHandler.multipliers;
+
+    localStorage.setItem('save0', JSON.stringify(saveData));
+  }
+
+  loadFromLocal() {
+    if (
+      localStorage.getItem('save0') &&
+      localStorage.getItem('save0') !== 'undefined' &&
+      localStorage.getItem('restart') !== 'true'
+    )
+      return JSON.parse(localStorage.getItem('save0'));
+
+    return {};
+  }
+
+  clearLocal() {
+    localStorage.setItem('save0', undefined);
+    localStorage.setItem('restart', true);
+
+    window.location.reload();
   }
 
   addEmissions(amount) {
@@ -108,8 +147,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="h-screen w-screen overflow-hidden">
-        <div className="w-full py-2 px-4 shadow">
+        <div className="flex w-full justify-between py-2 px-4 shadow">
           <h1 className="text-5xl">Burn It All</h1>
+          <button onClick={this.clearLocal}>Reset</button>
         </div>
         <div className="flex h-full w-full grid-cols-5">
           <div className="flex h-full w-1/5 min-w-max flex-col items-center p-8">
