@@ -30,13 +30,13 @@
   },
   "upgradeDescriptions": {
     "start": "Switch to an unclean energy source to start producing emission.",
-    "all": "Increases all CO<sub>2</sub> emissions by #valx.",
-    "clicker": "Increases CO<sub>2</sub> emissions produced by clicking the button by #valx.",
-    "building_furnace": "Increases CO<sub>2</sub> emissions produced by furnaces by #valx.",
-    "building_car": "Increases CO<sub>2</sub> emissions produced by cars by #valx.",
-    "building_truck": "Increases CO<sub>2</sub> emissions produced by trucks by #valx.",
-    "building_plane": "Increases CO<sub>2</sub> emissions produced by airplanes by #valx.",
-    "building_factory": "Increases CO<sub>2</sub> emissions produced by factories by #valx.",
-    "building_power_plant": "Increases CO<sub>2</sub> emissions produced by power plants by #valx."
+    "all": "Increases all CO<sub>2</sub> emissions by #val.",
+    "clicker": "Increases CO<sub>2</sub> emissions produced by clicking the button by #val.",
+    "building_furnace": "Increases CO<sub>2</sub> emissions produced by furnaces by #val.",
+    "building_car": "Increases CO<sub>2</sub> emissions produced by cars by #val.",
+    "building_truck": "Increases CO<sub>2</sub> emissions produced by trucks by #val.",
+    "building_plane": "Increases CO<sub>2</sub> emissions produced by airplanes by #val.",
+    "building_factory": "Increases CO<sub>2</sub> emissions produced by factories by #val.",
+    "building_power_plant": "Increases CO<sub>2</sub> emissions produced by power plants by #val."
   }
 }
