@@ -17,7 +17,7 @@
     "effects": [
       {
         "type": "all",
-        "value": 2
+        "value": 1.1
       }
     ],
     "requirements": ["upgrade_natural_gas"]
@@ -29,7 +29,7 @@
     "effects": [
       {
         "type": "all",
-        "value": 2
+        "value": 1.1
       }
     ],
     "requirements": ["upgrade_ethane"]
@@ -41,7 +41,7 @@
     "effects": [
       {
         "type": "all",
-        "value": 2
+        "value": 1.1
       }
     ],
     "requirements": ["upgrade_gasoline"]
@@ -53,7 +53,7 @@
     "effects": [
       {
         "type": "all",
-        "value": 2
+        "value": 1.1
       }
     ],
     "requirements": ["upgrade_crude_oil"]
@@ -65,7 +65,7 @@
     "effects": [
       {
         "type": "all",
-        "value": 2
+        "value": 1.1
       }
     ],
     "requirements": ["upgrade_coal_tar"]
@@ -77,7 +77,7 @@
     "effects": [
       {
         "type": "all",
-        "value": 2
+        "value": 1.1
       }
     ],
     "requirements": ["upgrade_bituminous_coal"]
@@ -89,7 +89,7 @@
     "effects": [
       {
         "type": "all",
-        "value": 2
+        "value": 1.05
       },
       {
         "type": "woodcutting",
