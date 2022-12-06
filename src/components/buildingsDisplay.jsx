@@ -33,6 +33,9 @@ class DisplayCanvas extends React.Component {
     let images = [];
     const rowsCount = this.props.data.display.rows.length;
     const scattered = this.props.data.display.type === 'scattered';
+    const absoluteHeight = this.frame.clientHeight * this.props.data.display.size;
+
+    console.log(absoluteHeight);
 
     for (let i = 0; i < this.props.data.count; i++) {
       const style = {
@@ -44,7 +47,11 @@ class DisplayCanvas extends React.Component {
           100 * this.props.data.display.rows[i % rowsCount] +
           (scattered ? 5 * Math.random() : 0)
         }%`,
-        left: `${Math.floor(i / rowsCount) * 30 + (scattered ? 5 * Math.random() : 0)}px`,
+        left: `${
+          absoluteHeight * Math.floor(i / rowsCount) +
+          (absoluteHeight / 2) * ((i % rowsCount) % 2) +
+          (scattered ? 5 * Math.random() : 0)
+        }px`,
         zIndex: i % rowsCount,
       };
 
@@ -74,7 +81,7 @@ class DisplayCanvas extends React.Component {
         className={`relative h-28 w-full overflow-hidden bg-display-${this.props.data.background}`}
         ref={this.setFrame}
       >
-        {this.renderImages()}
+        {this.frame ? this.renderImages() : null}
       </div>
     );
   }
