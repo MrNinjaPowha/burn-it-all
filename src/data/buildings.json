@@ -4,7 +4,7 @@
     "image": "furnace.svg",
     "background": "inside_factory",
     "cost": 10,
-    "production": 0.2,
+    "production": 0.4,
     "display": {
       "type": "scattered",
       "rows": [0.75, 0.88, 1],
@@ -28,7 +28,7 @@
     "image": "truck.svg",
     "background": "road",
     "cost": 1500,
-    "production": 10,
+    "production": 7.5,
     "display": {
       "type": "straight",
       "rows": [0.88, 1.05],
@@ -40,7 +40,7 @@
     "image": "plane.svg",
     "background": "sky",
     "cost": 2.5e4,
-    "production": 75,
+    "production": 40,
     "display": {
       "type": "scattered",
       "rows": [0.8],
@@ -52,7 +52,7 @@
     "image": "factory.svg",
     "background": "industry",
     "cost": 5e5,
-    "production": 250,
+    "production": 120,
     "display": {
       "type": "straight",
       "rows": [0.6],
@@ -64,7 +64,7 @@
     "image": "power_plant.svg",
     "background": "industry",
     "cost": 1.5e7,
-    "production": 1e3,
+    "production": 600,
     "display": {
       "type": "straight",
       "rows": [0.7],
