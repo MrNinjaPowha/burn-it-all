@@ -28,8 +28,8 @@ export default class App extends React.Component {
     const saveData = this.loadFromLocal();
 
     this.state = saveData.state || {
-      currentEmissions: 10000000000,
-      totalEmissions: 10000000000,
+      currentEmissions: 0,
+      totalEmissions: 0,
       unlocks: [],
       upgrades: [],
       buildings: buildingsData,
@@ -147,10 +147,16 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="h-screen w-screen overflow-hidden">
-        <div className="flex w-full justify-between py-2 px-4 shadow">
-          <h1 className="text-5xl">Burn It All</h1>
-          <button onClick={this.clearLocal}>Reset</button>
+        <div className="bg-metal-plates flex w-full items-center justify-between py-4 px-6">
+          <h1 className="text-shadow font-sans text-5xl font-bold text-white">Burn It All</h1>
+          <button
+            className="inline-block rounded bg-red-600 px-5 py-2.5 text-sm font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg"
+            onClick={this.clearLocal}
+          >
+            Reset
+          </button>
         </div>
+        <div className="bg-warning-pattern-horizontal h-4" />
         <div className="flex h-full w-full grid-cols-5">
           <div className="flex h-full w-1/5 min-w-max flex-col items-center p-8">
             <EmissionsCounter
@@ -171,7 +177,7 @@ export default class App extends React.Component {
             />
           </div>
           <div className="bg-warning-pattern min-w-4" />
-          <div className="w-1/4 min-w-[25%] overflow-y-auto p-2 after:block after:h-44">
+          <div className="bg-dirty-brick-wall w-1/4 min-w-[25%] overflow-y-auto p-2 after:block after:h-44">
             <h2 className="font-header text-center text-3xl">Shop!</h2>
             <h3 className="pt-2 text-2xl">Upgrades</h3>
             <UpgradeList
