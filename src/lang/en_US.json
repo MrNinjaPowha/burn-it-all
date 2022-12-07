@@ -26,7 +26,10 @@
     "upgrade_furnace_3": "Huge furnace",
     "upgrade_car_1": "Ban electric cars",
     "upgrade_car_2": "More SUVs",
-    "upgrade_car_3": "Larger cars"
+    "upgrade_car_3": "Larger cars",
+    "upgrade_truck_1": "Heavier trucks",
+    "upgrade_truck_2": "Sabotage cargo trains",
+    "upgrade_truck_3": "Bigger trucks"
   },
   "upgradeDescriptions": {
     "start": "Switch to an unclean energy source to start producing emission.",

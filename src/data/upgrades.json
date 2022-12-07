@@ -185,7 +185,7 @@
   {
     "name": "upgrade_furnace_3",
     "image": "furnace_3.svg",
-    "cost": 1e5,
+    "cost": 1e4,
     "effects": [
       {
         "type": "building_furnace",
@@ -229,5 +229,41 @@
       }
     ],
     "requirements": ["building_car"]
+  },
+  {
+    "name": "upgrade_truck_1",
+    "image": "truck_1.svg",
+    "cost": 1e4,
+    "effects": [
+      {
+        "type": "building_truck",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_truck"]
+  },
+  {
+    "name": "upgrade_truck_2",
+    "image": "truck_2.svg",
+    "cost": 1e5,
+    "effects": [
+      {
+        "type": "building_truck",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_truck"]
+  },
+  {
+    "name": "upgrade_truck_3",
+    "image": "truck_3.svg",
+    "cost": 7.5e5,
+    "effects": [
+      {
+        "type": "building_truck",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_truck"]
   }
 ]
