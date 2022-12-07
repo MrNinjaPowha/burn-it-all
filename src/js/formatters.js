@@ -18,6 +18,12 @@ function formatNumber(number) {
         return number >= item.value;
       }) || lookup[0];
 
+  if (number < 1000) {
+    number = Math.round((number + Number.EPSILON) * 10) / 10;
+  } else {
+    number = Math.round(number);
+  }
+
   return (number / item.value).toFixed(3).replace(regex, '$1') + item.symbol;
 }
 

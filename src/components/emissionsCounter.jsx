@@ -9,7 +9,7 @@ export default class EmissionsCounter extends React.Component {
           {formatNumber(Math.floor(this.props.emissions))} kgCO<sub>2</sub>
         </span>
         <span>
-          {formatNumber(this.props.production.toFixed(1))} kgCO<sub>2</sub>/s
+          {formatNumber(this.props.production)} kgCO<sub>2</sub>/s
         </span>
         <div className="h-0 text-3xl opacity-0">
           {/* Sets the max width for the parent */}
