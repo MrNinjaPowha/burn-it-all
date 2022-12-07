@@ -7,6 +7,7 @@ import EmissionsCounter from './components/emissionsCounter';
 import UpgradeList from './components/upgradeList';
 import currentCost from './js/calculators';
 import ProductionHandler from './js/productionHandler';
+const upgradesJson = require('./data/upgrades.json');
 const buildingsJson = require('./data/buildings.json');
 const lang_en_US = require('./lang/en_US.json');
 
@@ -25,9 +26,9 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    const saveData = this.loadFromLocal();
+    const loadData = this.tryLoadFromLocal();
 
-    this.state = saveData.state || {
+    this.state = loadData.state || {
       currentEmissions: 0,
       totalEmissions: 0,
       unlocks: [],
@@ -36,16 +37,12 @@ export default class App extends React.Component {
       lang: lang_en_US,
     };
 
-    if (saveData.productionMultipliers) {
-      this.productionHandler.multipliers = saveData.productionMultipliers;
-    }
-
+    this.loadFromLocal = this.loadFromLocal.bind(this);
     this.addEmissions = this.addEmissions.bind(this);
     this.gainPassiveEmissions = this.gainPassiveEmissions.bind(this);
     this.getSingleBuildingProduction = this.getSingleBuildingProduction.bind(this);
     this.onUpgradePurchase = this.onUpgradePurchase.bind(this);
     this.onBuildingPurchase = this.onBuildingPurchase.bind(this);
-
     window.onunload = () => this.saveToLocal();
   }
 
@@ -69,15 +66,37 @@ export default class App extends React.Component {
     localStorage.setItem('save0', JSON.stringify(saveData));
   }
 
-  loadFromLocal() {
+  tryLoadFromLocal() {
     if (
       localStorage.getItem('save0') &&
       localStorage.getItem('save0') !== 'undefined' &&
       localStorage.getItem('restart') !== 'true'
-    )
-      return JSON.parse(localStorage.getItem('save0'));
+    ) {
+      return this.loadFromLocal();
+    }
 
     return {};
+  }
+
+  loadFromLocal() {
+    const loadData = JSON.parse(localStorage.getItem('save0'));
+
+    for (const key in buildingsData) {
+      if (loadData.state.buildings.hasOwnProperty(key)) {
+        // Only load count from local storage
+        buildingsData[key].count = loadData.state.buildings[key].count;
+      }
+    }
+
+    loadData.state.buildings = buildingsData;
+
+    // Load all previously purchased upgrades
+    upgradesJson
+      .filter((upgrade) => loadData.state.upgrades.includes(upgrade.name))
+      .forEach((upgrade) => this.productionHandler.newUpgrade(upgrade));
+
+    console.log(loadData);
+    return loadData;
   }
 
   clearLocal() {
