@@ -1,4 +1,5 @@
 import React from 'react';
+import formatNumber from '../js/formatters';
 import HoverDescription from './hoverDescription';
 
 export default class Upgrade extends React.Component {
@@ -56,7 +57,7 @@ export default class Upgrade extends React.Component {
           {this.props.lang.upgrades[this.props.data.name] || this.props.data.name}
         </p>
         <p>
-          Cost: {this.props.data.cost} kgCO<sub>2</sub>
+          Cost: {formatNumber(this.props.data.cost)} kgCO<sub>2</sub>
         </p>
         <br />
         {effectsDescription}
