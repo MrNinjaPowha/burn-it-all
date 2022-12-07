@@ -150,7 +150,7 @@ export default class App extends React.Component {
         <div className="bg-metal-plates flex w-full items-center justify-between py-4 px-6">
           <h1 className="text-shadow font-sans text-5xl font-bold text-white">Burn It All</h1>
           <button
-            className="inline-block rounded bg-red-600 px-5 py-2.5 text-sm font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg"
+            className="inline-block rounded bg-red-600 px-5 py-2.5 text-sm font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus-visible:bg-red-700 focus-visible:shadow-lg active:bg-red-800 active:shadow-lg"
             onClick={this.clearLocal}
           >
             Reset

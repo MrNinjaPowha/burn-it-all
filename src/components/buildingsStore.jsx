@@ -85,7 +85,7 @@ class Building extends React.Component {
     return (
       <div className="relative">
         <button
-          className="flex max-h-min w-full items-center justify-between gap-2 rounded bg-gray-200 p-2"
+          className="flex max-h-min w-full items-center justify-between gap-2 rounded bg-gray-200 p-2 shadow transition duration-150 ease-in-out hover:scale-[98%] hover:bg-gray-300 hover:shadow-lg focus-visible:scale-[98%] focus-visible:bg-gray-300 focus-visible:shadow-lg active:bg-gray-400 active:shadow-lg"
           onClick={() => this.props.onPurchase(this.props.data.name)}
           onMouseEnter={this.onFocusIn}
           onMouseLeave={this.onFocusOut}
