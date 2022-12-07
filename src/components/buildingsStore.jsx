@@ -13,6 +13,7 @@ export default class BuildingStore extends React.Component {
           <li key={key}>
             <Building
               data={{ name: key, ...values }}
+              canAfford={this.props.currentEmissions >= currentCost(values.cost, values.count)}
               getProduction={this.props.getProduction}
               lang={this.props.lang}
               onPurchase={this.props.onPurchase}
@@ -91,6 +92,7 @@ class Building extends React.Component {
           onMouseLeave={this.onFocusOut}
           onFocus={this.onFocusIn}
           onBlur={this.onFocusOut}
+          data-can-afford={this.props.canAfford}
         >
           <div className="flex items-center gap-2">
             <img

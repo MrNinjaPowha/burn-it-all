@@ -184,6 +184,7 @@ export default class App extends React.Component {
               upgrades={this.state.upgrades}
               unlocks={this.state.unlocks}
               totalEmissions={this.state.totalEmissions}
+              currentEmissions={this.state.currentEmissions}
               onPurchase={this.onUpgradePurchase}
               lang={this.state.lang}
             />
@@ -192,6 +193,7 @@ export default class App extends React.Component {
               buildings={this.state.buildings}
               getProduction={this.getSingleBuildingProduction}
               totalEmissions={this.state.totalEmissions}
+              currentEmissions={this.state.currentEmissions}
               onPurchase={this.onBuildingPurchase}
               lang={this.state.lang.buildings}
             />

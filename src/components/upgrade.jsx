@@ -75,8 +75,10 @@ export default class Upgrade extends React.Component {
           onMouseLeave={this.onFocusOut}
           onFocus={this.onFocusIn}
           onBlur={this.onFocusOut}
+          data-can-afford={this.props.canAfford}
         >
           <img
+            style={{}}
             src={`${process.env.PUBLIC_URL}/images/upgrades/${this.props.data.image}`}
             alt={this.props.data.name}
           />

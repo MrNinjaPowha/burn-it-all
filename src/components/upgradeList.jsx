@@ -36,7 +36,12 @@ export default class UpgradeList extends React.Component {
       .sort((a, b) => a.cost - b.cost)
       .map((upgrade) => (
         <li key={upgrade.name}>
-          <Upgrade data={upgrade} onPurchase={this.props.onPurchase} lang={this.props.lang} />
+          <Upgrade
+            data={upgrade}
+            onPurchase={this.props.onPurchase}
+            canAfford={this.props.currentEmissions >= upgrade.cost}
+            lang={this.props.lang}
+          />
         </li>
       ));
 

@@ -11,6 +11,10 @@ canvas {
   height: 100%;
 }
 
+*[data-can-afford='false'] {
+  filter: brightness(50%);
+}
+
 /* ### UTILITY ################################################################ */
 
 .text-shadow {
