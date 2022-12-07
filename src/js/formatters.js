@@ -20,10 +20,12 @@ function formatNumber(number) {
 
   if (number < 1000) {
     number = Math.round((number + Number.EPSILON) * 10) / 10;
-  } else if (number < lookup[1].value) {
-    return number.toLocaleString('en-US');
   } else {
     number = Math.round(number);
+  }
+
+  if (number < lookup[1].value) {
+    return number.toLocaleString('en-US');
   }
 
   return (number / item.value).toFixed(3).replace(regex, '$1') + item.symbol;
