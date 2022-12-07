@@ -35,8 +35,6 @@ class DisplayCanvas extends React.Component {
     const scattered = this.props.data.display.type === 'scattered';
     const absoluteHeight = this.frame.clientHeight * this.props.data.display.size;
 
-    console.log(absoluteHeight);
-
     for (let i = 0; i < this.props.data.count; i++) {
       const style = {
         position: 'absolute',
