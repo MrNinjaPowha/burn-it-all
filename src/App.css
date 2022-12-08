@@ -28,17 +28,17 @@ canvas {
   background-image: url(./images/upgrades/background.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  transform: scale(0.9);
+  transform: scale(0.95);
   transition: transform 50ms;
 }
 
-.upgrade:hover {
+.upgrade:is(:hover, :focus-visible) {
   background-image: url(./images/upgrades/background_hover.svg);
   transform: scale(1);
 }
 
 .upgrade:active {
-  transform: scale(0.85);
+  transform: scale(0.9);
 }
 
 /* ### BACKGROUND IMAGES ###################################################### */
