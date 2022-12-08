@@ -200,7 +200,7 @@ export default class App extends React.Component {
             />
           </div>
           <div className="bg-warning-pattern min-w-4" />
-          <div className="bg-dirty-brick-wall w-1/4 min-w-[25%] overflow-y-auto p-2 shadow-inner-dark after:block after:h-44">
+          <div className="bg-dirty-brick-wall w-1/4 min-w-[25%] overflow-y-auto p-2 shadow-inner-dark after:block after:h-56">
             <h2 className="font-header text-shadow text-center text-3xl text-white">Shop!</h2>
             <h3 className="text-shadow pt-2 text-2xl text-white">Upgrades</h3>
             <UpgradeList
