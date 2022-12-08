@@ -5,7 +5,7 @@ import BuildingsDisplay from './components/buildingsDisplay';
 import BuildingStore from './components/buildingsStore';
 import EmissionsCounter from './components/emissionsCounter';
 import UpgradeList from './components/upgradeList';
-import currentCost from './js/calculators';
+import { getTotalCost } from './js/calculators';
 import ProductionHandler from './js/productionHandler';
 const upgradesJson = require('./data/upgrades.json');
 const buildingsJson = require('./data/buildings.json');
@@ -43,6 +43,7 @@ export default class App extends React.Component {
     this.getSingleBuildingProduction = this.getSingleBuildingProduction.bind(this);
     this.onUpgradePurchase = this.onUpgradePurchase.bind(this);
     this.onBuildingPurchase = this.onBuildingPurchase.bind(this);
+
     window.onunload = () => this.saveToLocal();
   }
 
@@ -145,15 +146,18 @@ export default class App extends React.Component {
     }
   }
 
-  onBuildingPurchase(building) {
-    const cost = currentCost(
-      this.state.buildings[building].cost,
-      this.state.buildings[building].count
+  onBuildingPurchase(event, building) {
+    if (event.shiftKey && this.state.buildings[building].count < 1) return; // Not enough buildings to sell
+
+    const [cost, amount] = getTotalCost(
+      this.state.buildings[building],
+      event.shiftKey,
+      event.ctrlKey
     );
 
     if (this.state.currentEmissions >= cost) {
       let newBuildings = this.state.buildings;
-      newBuildings[building].count += 1;
+      newBuildings[building].count += amount;
 
       this.setState((state) => ({
         buildings: newBuildings,
@@ -197,8 +201,8 @@ export default class App extends React.Component {
           </div>
           <div className="bg-warning-pattern min-w-4" />
           <div className="bg-dirty-brick-wall w-1/4 min-w-[25%] overflow-y-auto p-2 after:block after:h-44">
-            <h2 className="font-header text-center text-3xl">Shop!</h2>
-            <h3 className="pt-2 text-2xl">Upgrades</h3>
+            <h2 className="font-header text-shadow text-center text-3xl text-white">Shop!</h2>
+            <h3 className="text-shadow pt-2 text-2xl text-white">Upgrades</h3>
             <UpgradeList
               upgrades={this.state.upgrades}
               unlocks={this.state.unlocks}
@@ -207,7 +211,10 @@ export default class App extends React.Component {
               onPurchase={this.onUpgradePurchase}
               lang={this.state.lang}
             />
-            <h3 className="pt-2 text-2xl">Buildings</h3>
+            <h3 className="text-shadow pt-2 text-2xl text-white">Buildings</h3>
+            <p className="text-shadow text-sm text-white">
+              Hold [shift] to sell and [ctrl] to sell/buy 10 at a time
+            </p>
             <BuildingStore
               buildings={this.state.buildings}
               getProduction={this.getSingleBuildingProduction}

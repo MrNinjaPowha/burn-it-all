@@ -1,19 +1,39 @@
 import React from 'react';
-import currentCost from '../js/calculators';
+import { getTotalCost } from '../js/calculators';
 import formatNumber from '../js/formatters';
 import HoverDescription from './hoverDescription';
 
 export default class BuildingStore extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      shiftKey: false,
+      ctrlKey: false,
+    };
+
+    window.onkeydown = (e) => this.setState({ shiftKey: e.shiftKey, ctrlKey: e.ctrlKey });
+    window.onkeyup = (e) => this.setState({ shiftKey: e.shiftKey, ctrlKey: e.ctrlKey });
+  }
+
   render() {
     let buildings = [];
 
     for (const [key, values] of Object.entries(this.props.buildings)) {
       if (this.props.totalEmissions >= values.cost / 2 - 10) {
+        const [totalCost, amount] = getTotalCost(values, this.state.shiftKey, this.state.ctrlKey);
+
         buildings.push(
           <li key={key}>
             <Building
               data={{ name: key, ...values }}
-              canAfford={this.props.currentEmissions >= currentCost(values.cost, values.count)}
+              canAfford={
+                this.props.currentEmissions >= totalCost &&
+                !(this.state.shiftKey && values.count < 1)
+              }
+              amountToPurchase={amount}
+              keysDown={this.state}
+              totalCost={totalCost}
               getProduction={this.props.getProduction}
               lang={this.props.lang}
               onPurchase={this.props.onPurchase}
@@ -57,7 +77,10 @@ class Building extends React.Component {
       <HoverDescription>
         <p className="text-lg">{this.textName}</p>
         <p>
-          Cost: {formatNumber(currentCost(this.props.data.cost, this.props.data.count))} kgCO
+          {(this.props.keysDown.shiftKey ? `Sell` : `Buy`) +
+            ` ${Math.abs(this.props.amountToPurchase)} for: ` +
+            formatNumber(Math.abs(this.props.totalCost))}{' '}
+          kgCO
           <sub>2</sub>
         </p>
         {this.props.data.count > 0 ? (
@@ -87,7 +110,7 @@ class Building extends React.Component {
       <div className="relative">
         <button
           className="flex max-h-min w-full items-center justify-between gap-2 rounded bg-gray-200 p-2 shadow transition duration-150 ease-in-out hover:scale-[98%] hover:bg-gray-300 hover:shadow-lg focus-visible:scale-[98%] focus-visible:bg-gray-300 focus-visible:shadow-lg active:bg-gray-400 active:shadow-lg"
-          onClick={() => this.props.onPurchase(this.props.data.name)}
+          onClick={(event) => this.props.onPurchase(event, this.props.data.name)}
           onMouseEnter={this.onFocusIn}
           onMouseLeave={this.onFocusOut}
           onFocus={this.onFocusIn}
@@ -104,7 +127,12 @@ class Building extends React.Component {
               <h4 className="text-2xl">
                 {this.props.lang[this.props.data.name] || this.props.data.name}
               </h4>
-              <span>{formatNumber(currentCost(this.props.data.cost, this.props.data.count))}</span>
+              <span
+                className="data-[is-selling=true]:text-red-700"
+                data-is-selling={this.props.keysDown.shiftKey}
+              >
+                {formatNumber(Math.abs(this.props.totalCost))}
+              </span>
             </div>
           </div>
           <span className="text-3xl">{this.props.data.count}</span>
