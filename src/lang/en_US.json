@@ -39,7 +39,10 @@
     "upgrade_factory_3": "Less efficient factories",
     "upgrade_power_plant_1": "Decrease plant efficiency",
     "upgrade_power_plant_2": "Tax breaks for using electricity",
-    "upgrade_power_plant_3": "Sabotage clean energy"
+    "upgrade_power_plant_3": "Sabotage clean energy",
+    "upgrade_road_1": "Build more motorways",
+    "upgrade_engine_1": "Decrease engine efficiency",
+    "upgrade_engine_2": "Even worse engine efficiency"
   },
   "upgradeDescriptions": {
     "start": "Switch to an unclean energy source to start producing emission.",

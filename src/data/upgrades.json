@@ -373,5 +373,61 @@
       }
     ],
     "requirements": ["building_power_plant"]
+  },
+  {
+    "name": "upgrade_road_1",
+    "image": "road_1.svg",
+    "cost": 1.5e5,
+    "effects": [
+      {
+        "type": "building_car",
+        "value": 1.2
+      },
+      {
+        "type": "building_truck",
+        "value": 1.4
+      }
+    ],
+    "requirements": ["building_car", "building_truck"]
+  },
+  {
+    "name": "upgrade_engine_1",
+    "image": "engine_1.svg",
+    "cost": 6e5,
+    "effects": [
+      {
+        "type": "building_car",
+        "value": 1.25
+      },
+      {
+        "type": "building_truck",
+        "value": 1.2
+      },
+      {
+        "type": "building_plane",
+        "value": 1.2
+      }
+    ],
+    "requirements": ["building_car", "building_truck", "building_plane"]
+  },
+  {
+    "name": "upgrade_engine_2",
+    "image": "engine_2.svg",
+    "cost": 5e8,
+    "effects": [
+      {
+        "type": "building_car",
+        "value": 1.25
+      },
+      {
+        "type": "building_truck",
+        "value": 1.2
+      },
+      {
+        "type": "building_plane",
+        "value": 1.2
+      }
+    ],
+    "requirements": ["building_car", "building_truck", "building_plane", "upgrade_engine_1"]
   }
 ]
