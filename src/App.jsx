@@ -5,11 +5,11 @@ import BuildingsDisplay from './components/buildingsDisplay';
 import BuildingStore from './components/buildingsStore';
 import EmissionsCounter from './components/emissionsCounter';
 import UpgradeList from './components/upgradeList';
+import { langs } from './data/langs';
 import { getTotalCost } from './js/calculators';
 import ProductionHandler from './js/productionHandler';
 const upgradesJson = require('./data/upgrades.json');
 const buildingsJson = require('./data/buildings.json');
-const lang_en_US = require('./lang/en_US.json');
 
 let buildingsData = {};
 buildingsJson.forEach((building) => {
@@ -34,7 +34,7 @@ export default class App extends React.Component {
       unlocks: [],
       upgrades: [],
       buildings: buildingsData,
-      lang: lang_en_US,
+      lang: langs.en_US,
     };
 
     this.loadFromLocal = this.loadFromLocal.bind(this);
@@ -91,12 +91,15 @@ export default class App extends React.Component {
 
     loadData.state.buildings = buildingsData;
 
+    loadData.state.lang = Object.values(langs).filter(
+      (lang) => lang.key === loadData.state.lang.key
+    )[0];
+
     // Load all previously purchased upgrades
     upgradesJson
       .filter((upgrade) => loadData.state.upgrades.includes(upgrade.name))
       .forEach((upgrade) => this.productionHandler.newUpgrade(upgrade));
 
-    console.log(loadData);
     return loadData;
   }
 
