@@ -265,5 +265,113 @@
       }
     ],
     "requirements": ["building_truck"]
+  },
+  {
+    "name": "upgrade_plane_1",
+    "image": "plane_1.svg",
+    "cost": 2e5,
+    "effects": [
+      {
+        "type": "building_plane",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_plane"]
+  },
+  {
+    "name": "upgrade_plane_2",
+    "image": "plane_2.svg",
+    "cost": 7.5e5,
+    "effects": [
+      {
+        "type": "building_plane",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_plane"]
+  },
+  {
+    "name": "upgrade_plane_3",
+    "image": "plane_3.svg",
+    "cost": 5e6,
+    "effects": [
+      {
+        "type": "building_plane",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_plane"]
+  },
+  {
+    "name": "upgrade_factory_1",
+    "image": "factory_1.svg",
+    "cost": 1.25e6,
+    "effects": [
+      {
+        "type": "building_factory",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_factory"]
+  },
+  {
+    "name": "upgrade_factory_2",
+    "image": "factory_2.svg",
+    "cost": 8e6,
+    "effects": [
+      {
+        "type": "building_factory",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_factory"]
+  },
+  {
+    "name": "upgrade_factory_3",
+    "image": "factory_3.svg",
+    "cost": 1e7,
+    "effects": [
+      {
+        "type": "building_factory",
+        "value": 1.5
+      }
+    ],
+    "requirements": ["building_factory"]
+  },
+  {
+    "name": "upgrade_power_plant_1",
+    "image": "power_plant_1.svg",
+    "cost": 8e7,
+    "effects": [
+      {
+        "type": "building_power_plant",
+        "value": 1.5
+      }
+    ],
+    "requirements": ["building_power_plant"]
+  },
+  {
+    "name": "upgrade_power_plant_2",
+    "image": "power_plant_2.svg",
+    "cost": 4e8,
+    "effects": [
+      {
+        "type": "building_power_plant",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_power_plant"]
+  },
+  {
+    "name": "upgrade_power_plant_3",
+    "image": "power_plant_3.svg",
+    "cost": 1e9,
+    "effects": [
+      {
+        "type": "building_power_plant",
+        "value": 2
+      }
+    ],
+    "requirements": ["building_power_plant"]
   }
 ]
