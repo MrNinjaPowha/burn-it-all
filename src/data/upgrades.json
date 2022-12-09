@@ -32,7 +32,7 @@
         "value": 1.1
       }
     ],
-    "requirements": ["upgrade_ethane"]
+    "requirements": ["upgrade_ethane", "building_car", "building_truck"]
   },
   {
     "name": "upgrade_crude_oil",
@@ -44,7 +44,7 @@
         "value": 1.1
       }
     ],
-    "requirements": ["upgrade_gasoline"]
+    "requirements": ["upgrade_gasoline", "building_plane"]
   },
   {
     "name": "upgrade_coal_tar",
@@ -56,7 +56,7 @@
         "value": 1.1
       }
     ],
-    "requirements": ["upgrade_crude_oil"]
+    "requirements": ["upgrade_crude_oil", "building_factory"]
   },
   {
     "name": "upgrade_bituminous_coal",
@@ -68,7 +68,7 @@
         "value": 1.1
       }
     ],
-    "requirements": ["upgrade_coal_tar"]
+    "requirements": ["upgrade_coal_tar", "building_power_plant"]
   },
   {
     "name": "upgrade_coke",
