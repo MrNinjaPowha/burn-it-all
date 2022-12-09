@@ -23,7 +23,6 @@ function getTotalCost(building, isSelling, isMultiple) {
     totalCost = currentCost(building.cost, building.count);
   }
 
-  console.log(totalCost);
   return [Math.round(totalCost), amount];
 }
 
