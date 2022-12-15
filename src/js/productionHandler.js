@@ -34,9 +34,15 @@ export default class ProductionHandler {
 
   newUpgrade(upgrade) {
     upgrade.effects.forEach((effect) => {
-      if (effect.type === 'start') this.multipliers.all = 1;
-      else if (this.multipliers.hasOwnProperty(effect.type))
+      // Special upgrades
+      if (effect.type === 'start') {
+        this.multipliers.all = 1;
+      }
+
+      // Any other upgrades
+      else if (this.multipliers.hasOwnProperty(effect.type)) {
         this.multipliers[effect.type] *= effect.value;
+      }
     });
   }
 }

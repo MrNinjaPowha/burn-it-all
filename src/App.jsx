@@ -6,7 +6,7 @@ import BuildingStore from './components/buildingsStore';
 import EmissionsCounter from './components/emissionsCounter';
 import UpgradeList from './components/upgradeList';
 import { langs } from './data/langs';
-import { getTotalCost } from './js/calculators';
+import { getTotalBuildingCost } from './js/calculators';
 import ProductionHandler from './js/productionHandler';
 const upgradesJson = require('./data/upgrades.json');
 const buildingsJson = require('./data/buildings.json');
@@ -153,7 +153,7 @@ export default class App extends React.Component {
   onBuildingPurchase(event, building) {
     if (event.shiftKey && this.state.buildings[building].count < 1) return; // Not enough buildings to sell
 
-    const [cost, amount] = getTotalCost(
+    const [cost, amount] = getTotalBuildingCost(
       this.state.buildings[building],
       event.shiftKey,
       event.ctrlKey

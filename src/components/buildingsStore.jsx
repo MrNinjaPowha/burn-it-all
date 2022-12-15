@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTotalCost } from '../js/calculators';
+import { getTotalBuildingCost } from '../js/calculators';
 import formatNumber from '../js/formatters';
 import HoverDescription from './hoverDescription';
 
@@ -32,7 +32,11 @@ export default class BuildingStore extends React.Component {
 
     for (const [key, values] of Object.entries(this.props.buildings)) {
       if (this.props.totalEmissions >= values.cost / 2 - 10) {
-        const [totalCost, amount] = getTotalCost(values, this.state.shiftKey, this.state.ctrlKey);
+        const [totalCost, amount] = getTotalBuildingCost(
+          values,
+          this.state.shiftKey,
+          this.state.ctrlKey
+        );
 
         buildings.push(
           <li key={key}>

@@ -19,6 +19,7 @@ function formatNumber(number) {
       }) || lookup[0];
 
   if (number < 1000) {
+    // Round numbers smaller than 1,000 to one decimal point
     number = Math.round((number + Number.EPSILON) * 10) / 10;
   } else {
     number = Math.round(number);
