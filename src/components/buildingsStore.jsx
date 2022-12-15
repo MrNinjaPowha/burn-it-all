@@ -12,8 +12,19 @@ export default class BuildingStore extends React.Component {
       ctrlKey: false,
     };
 
-    window.onkeydown = (e) => this.setState({ shiftKey: e.shiftKey, ctrlKey: e.ctrlKey });
-    window.onkeyup = (e) => this.setState({ shiftKey: e.shiftKey, ctrlKey: e.ctrlKey });
+    window.onkeydown = (e) => this.updateKeys(e);
+    window.onkeyup = (e) => this.updateKeys(e);
+    // Prevents it from getting locked to true after tabbing out unless you keep the mouse completly still
+    window.onmousemove = (e) => this.updateKeys(e);
+  }
+
+  updateKeys(event) {
+    if (event.shiftKey !== this.state.shiftKey || event.ctrlKey !== this.state.ctrlKey) {
+      this.setState({
+        shiftKey: event.shiftKey,
+        ctrlKey: event.ctrlKey,
+      });
+    }
   }
 
   render() {
