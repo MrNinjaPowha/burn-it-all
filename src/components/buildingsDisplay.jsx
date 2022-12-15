@@ -6,6 +6,7 @@ export default class BuildingsDisplay extends React.Component {
 
     for (const [key, values] of Object.entries(this.props.buildings)) {
       if (values.count) {
+        // Add display for every building with 1 or more built
         frames.push(
           <li key={key}>
             <DisplayCanvas name={key} data={values} />
@@ -33,6 +34,7 @@ class DisplayCanvas extends React.Component {
     let images = [];
     const rowsCount = this.props.data.display.rows.length;
     const scattered = this.props.data.display.type === 'scattered';
+    // Since the images are squares the height can be used to determine horizontal gap
     const absoluteHeight = this.frame.clientHeight * this.props.data.display.size;
 
     for (let i = 0; i < this.props.data.count; i++) {
@@ -50,7 +52,7 @@ class DisplayCanvas extends React.Component {
           (absoluteHeight / 2) * ((i % rowsCount) % 2) +
           (scattered ? 5 * Math.random() : 0)
         }px`,
-        zIndex: i % rowsCount,
+        zIndex: i % rowsCount, // display bottom rows above if they overlap
       };
 
       if (this.imageRefs[i]) {
@@ -79,7 +81,10 @@ class DisplayCanvas extends React.Component {
         className={`relative h-28 w-full overflow-hidden bg-display-${this.props.data.background}`}
         ref={this.setFrame}
       >
-        {this.frame ? this.renderImages() : null}
+        {
+          /* Wait for the frame ref before rendering images */
+          this.frame ? this.renderImages() : null
+        }
       </div>
     );
   }

@@ -62,7 +62,6 @@ export default class App extends React.Component {
     const saveData = {};
 
     saveData.state = this.state;
-    saveData.productionMultipliers = this.productionHandler.multipliers;
 
     localStorage.setItem('save0', JSON.stringify(saveData));
   }
@@ -92,6 +91,7 @@ export default class App extends React.Component {
     loadData.state.buildings = buildingsData;
 
     loadData.state.lang = Object.values(langs).filter(
+      // Find and load lang file
       (lang) => lang.key === loadData.state.lang.key
     )[0];
 
@@ -131,6 +131,7 @@ export default class App extends React.Component {
   }
 
   getSingleBuildingProduction(buildingData) {
+    // Create new buildings object that only contains one buildings data
     let building = {};
     building[buildingData.name] = buildingData;
 
@@ -159,6 +160,7 @@ export default class App extends React.Component {
     );
 
     if (this.state.currentEmissions >= cost) {
+      // Copy buildings data to change and override old
       let newBuildings = this.state.buildings;
       newBuildings[building].count += amount;
 

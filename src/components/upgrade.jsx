@@ -50,8 +50,14 @@ export default class Upgrade extends React.Component {
 
     return (
       <HoverDescription
-        left={document.getElementById('upgrade-list').getBoundingClientRect().left}
-        top={document.getElementById(this.props.data.name).getBoundingClientRect().bottom}
+        left={
+          /* Left side of the whole grid which would break with position:relative */
+          document.getElementById('upgrade-list').getBoundingClientRect().left
+        }
+        top={
+          /* The bottom of this upgrade button since position:relative cannot be used */
+          document.getElementById(this.props.data.name).getBoundingClientRect().bottom
+        }
       >
         <p className="text-lg">
           {this.props.lang.upgrades[this.props.data.name] || this.props.data.name}

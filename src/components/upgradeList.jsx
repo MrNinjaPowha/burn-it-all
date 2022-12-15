@@ -45,6 +45,7 @@ export default class UpgradeList extends React.Component {
         </li>
       ));
 
+    // If the list is not focused show only one row to not fill too much space
     if (!this.state.focused) upgradesHTML.splice(5);
 
     return (
