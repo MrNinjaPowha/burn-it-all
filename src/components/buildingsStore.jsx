@@ -94,24 +94,17 @@ class Building extends React.Component {
           kgCO
           <sub>2</sub>
         </p>
-        {this.props.data.count > 0 ? (
-          <>
-            <br />
-            <p>
-              Each {this.textName} produces{' '}
-              {formatNumber(
-                this.props.getProduction(this.props.data, 1000) / this.props.data.count
-              )}{' '}
-              kgCO
-              <sub>2</sub>/s
-            </p>
-            <p>
-              All {this.props.data.count} {this.textName}s produce{' '}
-              {formatNumber(this.props.getProduction(this.props.data, 1000))} kgCO
-              <sub>2</sub>/s
-            </p>
-          </>
-        ) : null}
+        <br />
+        <p>
+          Each {this.textName} produces{' '}
+          {formatNumber(this.props.getProduction({ ...this.props.data, count: 1 }, 1000))} kgCO
+          <sub>2</sub>/s
+        </p>
+        <p>
+          All {this.props.data.count} {this.textName}s produce{' '}
+          {formatNumber(this.props.getProduction(this.props.data, 1000))} kgCO
+          <sub>2</sub>/s
+        </p>
       </HoverDescription>
     );
   }
