@@ -66,3 +66,7 @@ canvas {
 .bg-display-road {
   background-image: url(./images/displays/road.svg);
 }
+
+.bg-display-sky {
+  background-image: url(./images/displays/sky.svg);
+}

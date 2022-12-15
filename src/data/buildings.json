@@ -43,8 +43,8 @@
     "production": 40,
     "display": {
       "type": "scattered",
-      "rows": [0.8],
-      "size": 0.6
+      "rows": [0.7, 1.05],
+      "size": 0.8
     }
   },
   {
