@@ -52,7 +52,7 @@
     "image": "factory.svg",
     "background": "industry",
     "cost": 5e5,
-    "production": 120,
+    "production": 220,
     "display": {
       "type": "straight",
       "rows": [0.6],
@@ -64,7 +64,7 @@
     "image": "power_plant.svg",
     "background": "industry",
     "cost": 1.5e7,
-    "production": 600,
+    "production": 1200,
     "display": {
       "type": "straight",
       "rows": [0.7],

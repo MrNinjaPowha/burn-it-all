@@ -189,7 +189,7 @@
     "effects": [
       {
         "type": "building_furnace",
-        "value": 2
+        "value": 4
       }
     ],
     "requirements": ["building_furnace", "upgrade_furnace_2"]
@@ -225,7 +225,7 @@
     "effects": [
       {
         "type": "building_car",
-        "value": 2
+        "value": 3
       }
     ],
     "requirements": ["building_car"]
@@ -381,11 +381,11 @@
     "effects": [
       {
         "type": "building_car",
-        "value": 1.2
+        "value": 1.4
       },
       {
         "type": "building_truck",
-        "value": 1.4
+        "value": 1.2
       }
     ],
     "requirements": ["building_car", "building_truck"]
@@ -397,15 +397,15 @@
     "effects": [
       {
         "type": "building_car",
-        "value": 1.25
+        "value": 1.15
       },
       {
         "type": "building_truck",
-        "value": 1.2
+        "value": 1.1
       },
       {
         "type": "building_plane",
-        "value": 1.2
+        "value": 1.1
       }
     ],
     "requirements": ["building_car", "building_truck", "building_plane"]
@@ -417,15 +417,15 @@
     "effects": [
       {
         "type": "building_car",
-        "value": 1.25
+        "value": 1.15
       },
       {
         "type": "building_truck",
-        "value": 1.2
+        "value": 1.1
       },
       {
         "type": "building_plane",
-        "value": 1.2
+        "value": 1.1
       }
     ],
     "requirements": ["building_car", "building_truck", "building_plane", "upgrade_engine_1"]
