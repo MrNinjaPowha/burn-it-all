@@ -6,7 +6,7 @@ export default class EmissionsCounter extends React.Component {
     return (
       <>
         <span className="text-3xl">
-          {formatNumber(Math.floor(this.props.emissions))} kgCO<sub>2</sub>
+          {formatNumber(Math.floor(this.props.emissions), false)} kgCO<sub>2</sub>
         </span>
         <span>
           {formatNumber(this.props.production)} kgCO<sub>2</sub>/s

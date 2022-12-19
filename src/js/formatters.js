@@ -1,4 +1,4 @@
-function formatNumber(number) {
+function formatNumber(number, removeTrailing = true) {
   const lookup = [
     { value: 1, symbol: '' },
     { value: 1e6, symbol: ' Million' },
@@ -29,7 +29,10 @@ function formatNumber(number) {
     return number.toLocaleString('en-US');
   }
 
-  return (number / item.value).toFixed(3).replace(regex, '$1') + item.symbol;
+  let formattedString = (number / item.value).toFixed(3);
+  if (removeTrailing) formattedString = formattedString.replace(regex, '$1');
+
+  return formattedString + item.symbol;
 }
 
 export default formatNumber;
