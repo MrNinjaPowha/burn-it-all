@@ -6,7 +6,7 @@ function formatNumber(number, removeTrailing = true) {
     { value: 1e12, symbol: ' Trillion' },
     { value: 1e15, symbol: ' Quadrillion' },
     { value: 1e18, symbol: ' Quintillion' },
-    { value: 1e18, symbol: ' Sextillion' },
+    { value: 1e21, symbol: ' Sextillion' },
   ];
 
   const regex = /\.0+$|(\.[0-9]*[1-9])0+$/;
