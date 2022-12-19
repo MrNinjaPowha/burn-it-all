@@ -10,7 +10,7 @@ function formatNumber(number, removeTrailing = true) {
   ];
 
   const regex = /\.0+$|(\.[0-9]*[1-9])0+$/;
-  var item =
+  const item =
     lookup
       .slice()
       .reverse()
