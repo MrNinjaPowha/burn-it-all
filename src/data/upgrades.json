@@ -321,7 +321,7 @@
     "effects": [
       {
         "type": "building_factory",
-        "value": 2
+        "value": 1.5
       }
     ],
     "requirements": ["building_factory"]
@@ -341,7 +341,7 @@
   {
     "name": "upgrade_power_plant_1",
     "image": "power_plant_1.svg",
-    "cost": 8e7,
+    "cost": 4e7,
     "effects": [
       {
         "type": "building_power_plant",
@@ -353,11 +353,11 @@
   {
     "name": "upgrade_power_plant_2",
     "image": "power_plant_2.svg",
-    "cost": 4e8,
+    "cost": 1.5e8,
     "effects": [
       {
         "type": "building_power_plant",
-        "value": 2
+        "value": 1.5
       }
     ],
     "requirements": ["building_power_plant"]
@@ -365,11 +365,11 @@
   {
     "name": "upgrade_power_plant_3",
     "image": "power_plant_3.svg",
-    "cost": 1e9,
+    "cost": 5e9,
     "effects": [
       {
         "type": "building_power_plant",
-        "value": 2
+        "value": 1.5
       }
     ],
     "requirements": ["building_power_plant"]

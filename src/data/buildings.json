@@ -64,7 +64,7 @@
     "image": "power_plant.svg",
     "background": "industry",
     "cost": 1.5e7,
-    "production": 1200,
+    "production": 1800,
     "display": {
       "type": "straight",
       "rows": [0.7],
